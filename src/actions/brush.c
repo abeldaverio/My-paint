@@ -22,6 +22,6 @@ void brush_action(object_t *button, cursor_t *cursor)
         cursor->pos = (sfVector2f){0, -20};
         sfSprite_setScale(cursor->icon,
             sprite_size(button->texture, (sfVector2f){20, 20}));
-        cursor->current = PIPETTE;
+        cursor->current = BRUSH;
     }
 }
