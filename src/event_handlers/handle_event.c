@@ -15,7 +15,6 @@ void handle_events(sfRenderWindow *wnd,
     while (sfRenderWindow_pollEvent(wnd, event)) {
         if (event->type == sfEvtClosed)
             sfRenderWindow_close(wnd);
-        if (event->type == sfEvtMouseButtonPressed)
-            check_button_click(event, buttons, cursor);
+        check_button_click(wnd, event, buttons, cursor);
     }
 }

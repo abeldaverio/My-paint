@@ -23,6 +23,6 @@ static const check_state_t STATES_TAB[] = {
     {OPEN, {0, 255, 255, 255}},
 };
 
-static const int STATES_TAB_SIZE = sizeof(STATES_TAB) / sizeof(check_state_t);
+static const size_t STATES_TAB_S = sizeof(STATES_TAB) / sizeof(check_state_t);
 
 #endif /* !BUTTON_STATES_H */

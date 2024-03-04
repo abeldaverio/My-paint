@@ -26,7 +26,7 @@ static bool start_window(char *argv)
         update_buttons(buttons);
         draw_elements(wnd, buttons, cursor);
         sfRenderWindow_display(wnd);
-        sfRenderWindow_clear(wnd, (sfColor){200, 200, 200, 255});
+        sfRenderWindow_clear(wnd, (sfColor){230, 230, 210, 255});
         handle_events(wnd, buttons, &event, cursor);
     }
     free_elements(wnd, buttons, textures, cursor);

@@ -33,7 +33,8 @@ void draw_cursor(sfRenderWindow *wnd, cursor_t *cursor);
 //event handlers
 void handle_events(sfRenderWindow *wnd, button_t **buttons,
     sfEvent *event, cursor_t *cursor);
-void check_button_click(sfEvent *event, button_t **buttons, cursor_t *cursor);
+void check_button_click(sfRenderWindow *wnd, sfEvent *event,
+    button_t **buttons, cursor_t *cursor);
 
 //update functions
 void update_buttons(button_t **buttons);

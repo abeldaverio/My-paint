@@ -11,7 +11,7 @@
 
 void update_style(object_t *button)
 {
-    for (size_t i = 0; i < STATES_TAB_SIZE; i++) {
+    for (size_t i = 0; i < STATES_TAB_S; i++) {
         if (STATES_TAB[i].state == button->state) {
             sfRectangleShape_setFillColor(button->rect,
                 STATES_TAB[i].bg_color);
