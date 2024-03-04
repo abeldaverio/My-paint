@@ -19,6 +19,7 @@ SRC	=	src/main_program/main.c	\
 		src/actions/eraser.c	\
 		src/actions/brush.c	\
 		src/actions/pipette.c	\
+		src/update/update_buttons.c	\
 		src/event_handlers/handle_event.c	\
 		src/event_handlers/button_events.c	\
 		src/calculations/sprite_size.c	\

@@ -15,7 +15,7 @@
 cursor_t *init_cursor(sfTexture **textures)
 {
     cursor_t *cursor = malloc(sizeof(cursor_t));
-    
+
     if (cursor == NULL)
         return NULL;
     cursor->icon = sfSprite_create();

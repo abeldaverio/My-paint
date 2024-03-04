@@ -5,8 +5,8 @@
 ** header for cursor struct
 */
 
-#ifndef CURSOR_T
-    #define CURSOR_T
+#ifndef CURSOR_H
+    #define CURSOR_H
 
     #include <SFML/Graphics.h>
     #include "enums/colors.h"
@@ -20,4 +20,4 @@ typedef struct cursor_s {
     sfVector2f pos;
 }cursor_t;
 
-#endif 
+#endif

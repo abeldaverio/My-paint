@@ -19,10 +19,11 @@ static bool start_window(char *argv)
     button_t **buttons = init_buttons(textures);
     cursor_t *cursor = init_cursor(textures);
     sfEvent event;
-    
+
     if (wnd == NULL)
         return false;
     while (sfRenderWindow_isOpen(wnd)) {
+        update_buttons(buttons);
         draw_elements(wnd, buttons, cursor);
         sfRenderWindow_display(wnd);
         sfRenderWindow_clear(wnd, (sfColor){200, 200, 200, 255});

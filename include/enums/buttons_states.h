@@ -13,7 +13,6 @@ typedef enum state_e {
     HOVER,
     PRESSED,
     OPEN,
-    RELEASED,
 }state_t;
 
 #endif /* !BUTTON_STATES_ENUMS_H */

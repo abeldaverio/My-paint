@@ -9,9 +9,10 @@
 #include "button.h"
 #include "functions.h"
 
-void handle_events(sfRenderWindow *wnd, button_t **buttons, sfEvent *event, cursor_t *cursor)
-{   
-    while(sfRenderWindow_pollEvent(wnd, event)) {
+void handle_events(sfRenderWindow *wnd,
+    button_t **buttons, sfEvent *event, cursor_t *cursor)
+{
+    while (sfRenderWindow_pollEvent(wnd, event)) {
         if (event->type == sfEvtClosed)
             sfRenderWindow_close(wnd);
         if (event->type == sfEvtMouseButtonPressed)

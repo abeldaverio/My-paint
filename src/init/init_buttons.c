@@ -22,7 +22,6 @@ static button_t *init_button(int i, sfTexture **textures)
         return NULL;
     sfRectangleShape_setSize(button->main.rect, INIT_B_TAB[i].size);
     sfRectangleShape_setPosition(button->main.rect, INIT_B_TAB[i].pos);
-    sfRectangleShape_setFillColor(button->main.rect, INIT_B_TAB[i].bg_color);
     sfSprite_setTexture(button->main.icon,
         textures[INIT_B_TAB[i].icon_nb], false);
     button->main.texture = textures[INIT_B_TAB[i].icon_nb];
@@ -30,6 +29,7 @@ static button_t *init_button(int i, sfTexture **textures)
         sprite_size(textures[INIT_B_TAB[i].icon_nb], INIT_B_TAB[i].size));
     sfSprite_setPosition(button->main.icon, INIT_B_TAB[i].pos);
     button->main.action = INIT_B_TAB[i].action;
+    button->main.state = NONE;
     button->main.hidden = false;
     return button;
 }

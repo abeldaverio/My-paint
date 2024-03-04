@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2024
-** texture 
+** texture
 ** File description:
 ** init
 */
@@ -18,7 +18,6 @@ static const char *INIT_TEXTURE_TAB[] = {
     "assests/icons/pipette.png"
 };
 
-static const size_t TEXTURE_TAB_SIZE =
-    sizeof(INIT_TEXTURE_TAB) / sizeof(char *);
+static const size_t TEXTURE_TAB_S = sizeof(INIT_TEXTURE_TAB) / sizeof(char *);
 
 #endif /* !TEXTURE_INIT */

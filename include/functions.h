@@ -35,6 +35,9 @@ void handle_events(sfRenderWindow *wnd, button_t **buttons,
     sfEvent *event, cursor_t *cursor);
 void check_button_click(sfEvent *event, button_t **buttons, cursor_t *cursor);
 
+//update functions
+void update_buttons(button_t **buttons);
+
 //calculation functions
 sfVector2f sprite_size(sfTexture *text, sfVector2f size);
 

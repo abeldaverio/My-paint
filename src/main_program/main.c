@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** main
 ** File description:
-** main 
+** main
 */
 
 #include "functions.h"
