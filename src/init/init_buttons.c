@@ -38,7 +38,7 @@ button_t **init_buttons(sfTexture **textures)
 {
     button_t **array = malloc(sizeof(button_t *) * (INIT_B_TAB_SIZE + 1));
 
-    if (array == NULL)
+    if (array == NULL || textures == NULL)
         return NULL;
     for (size_t i = 0; i < INIT_B_TAB_SIZE; i++) {
         array[i] = init_button(i, textures);

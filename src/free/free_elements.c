@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "button.h"
 #include "cursor.h"
+#include "board.h"
 
 static void destroy_buttons(button_t **buttons)
 {
@@ -33,6 +34,14 @@ static void destroy_cursor(cursor_t *cursor)
     free(cursor);
 }
 
+static void destroy_board(board_t *board)
+{
+    sfImage_destroy(board->image);
+    sfSprite_destroy(board->sprite);
+    sfTexture_destroy(board->texture);
+    free(board);
+}
+
 void free_elements(sfRenderWindow *wnd, button_t **buttons,
     sfTexture **textures, cursor_t *cursor)
 {
@@ -40,4 +49,9 @@ void free_elements(sfRenderWindow *wnd, button_t **buttons,
     destroy_buttons(buttons);
     destroy_textures(textures);
     destroy_cursor(cursor);
+}
+
+void free_more_elements(board_t *board)
+{
+    destroy_board(board);
 }

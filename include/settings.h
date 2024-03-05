@@ -11,5 +11,6 @@
     #define LENGTH 1200
     #define HIGHT 800
     #define FRAME 30
+    #define BOARD_ESPACEMENT 100
 
 #endif

@@ -32,7 +32,6 @@ static const init_b_t INIT_B_TAB[] = {
     {{40, 40}, {50, 10}, ERASER, eraser_action},
     {{40, 40}, {95, 10}, BRUSH, brush_action},
     {{40, 40}, {140, 10}, PIPETTE, pipette_action},
-    {{40, 40}, {185, 10}, PENCIL, pencil_action},
 };
 
 static const size_t INIT_B_TAB_SIZE = sizeof(INIT_B_TAB) / sizeof(init_b_t);

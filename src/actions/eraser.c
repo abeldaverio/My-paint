@@ -12,13 +12,13 @@
 void eraser_action(object_t *button, cursor_t *cursor)
 {
     if (cursor->current == ERASER) {
-        sfSprite_setTexture(cursor->icon, cursor->basic, false);
+        sfSprite_setTexture(cursor->icon, cursor->basic, true);
         sfSprite_setScale(cursor->icon,
             sprite_size(cursor->basic, (sfVector2f){20, 20}));
         cursor->pos = (sfVector2f){0, 0};
         cursor->current = BASIC;
     } else {
-        sfSprite_setTexture(cursor->icon, button->texture, false);
+        sfSprite_setTexture(cursor->icon, button->texture, true);
         cursor->pos = (sfVector2f){0, -20};
         sfSprite_setScale(cursor->icon,
             sprite_size(button->texture, (sfVector2f){20, 20}));

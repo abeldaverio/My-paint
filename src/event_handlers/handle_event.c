@@ -10,11 +10,16 @@
 #include "functions.h"
 
 void handle_events(sfRenderWindow *wnd,
-    button_t **buttons, sfEvent *event, cursor_t *cursor)
+    button_t **buttons, cursor_t *cursor, board_t *board)
 {
-    while (sfRenderWindow_pollEvent(wnd, event)) {
-        if (event->type == sfEvtClosed)
+    sfEvent event;
+
+    while (sfRenderWindow_pollEvent(wnd, &event)) {
+        if (event.type == sfEvtClosed)
             sfRenderWindow_close(wnd);
-        check_button_click(wnd, event, buttons, cursor);
+        check_button_click(wnd, &event, buttons, cursor);
+        if (sfMouse_isButtonPressed(sfMouseLeft) &&
+            cursor_on_board(wnd))
+            update_board(wnd, cursor, board);
     }
 }
