@@ -9,7 +9,7 @@
 #include "cursor.h"
 #include "functions.h"
 
-void eraser_action(object_t *button, cursor_t *cursor)
+void eraser_action(object_t *button, cursor_t *cursor, board_t *)
 {
     if (cursor->current == ERASER) {
         sfSprite_setTexture(cursor->icon, cursor->basic, true);

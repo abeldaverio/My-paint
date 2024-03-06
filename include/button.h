@@ -11,15 +11,18 @@
     #include <SFML/Graphics.h>
     #include <stdbool.h>
     #include "enums/buttons_states.h"
+    #include "enums/type.h"
     #include "cursor.h"
+    #include "board.h"
 
 typedef struct object_s {
     sfRectangleShape *rect;
     sfSprite *icon;
     sfTexture *texture;
     state_t state;
+    type_t type;
     bool hidden;
-    void (*action)(struct object_s *, cursor_t *);
+    void (*action)(struct object_s *, cursor_t *, board_t *);
 }object_t;
 
 typedef struct button_s {

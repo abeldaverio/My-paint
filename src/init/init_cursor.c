@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <stdlib.h>
+#include "settings.h"
 #include "enums/textures.h"
 #include "enums/colors.h"
 #include "cursor.h"
@@ -27,6 +28,7 @@ cursor_t *init_cursor(sfTexture **textures)
     cursor->basic = textures[BASIC];
     cursor->current = BASIC;
     cursor->color = BLACK;
+    cursor->thickness = BASE_THICKNESS;
     cursor->pos = (sfVector2f){0, 0};
     return cursor;
 }

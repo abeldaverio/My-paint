@@ -9,17 +9,16 @@
 #include "button.h"
 #include "functions.h"
 
-void handle_events(sfRenderWindow *wnd,
+void handle_events(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board)
 {
-    sfEvent event;
-
-    while (sfRenderWindow_pollEvent(wnd, &event)) {
-        if (event.type == sfEvtClosed)
-            sfRenderWindow_close(wnd);
-        check_button_click(wnd, &event, buttons, cursor);
+    while (sfRenderWindow_pollEvent(wnd_struct->wnd, &wnd_struct->Event)) {
+        if (wnd_struct->Event.type == sfEvtClosed)
+            sfRenderWindow_close(wnd_struct->wnd);
+        check_button_click(wnd_struct->wnd,
+            &wnd_struct->Event, buttons, cursor, board);
         if (sfMouse_isButtonPressed(sfMouseLeft) &&
-            cursor_on_board(wnd))
-            update_board(wnd, cursor, board);
+            cursor_on_board(wnd_struct->wnd))
+            update_board(wnd_struct->wnd, cursor, board);
     }
 }

@@ -9,7 +9,7 @@
 #include "cursor.h"
 #include "functions.h"
 
-void pipette_action(object_t *button, cursor_t *cursor)
+void pipette_action(object_t *button, cursor_t *cursor, board_t *)
 {
     if (cursor->current == PIPETTE) {
         sfSprite_setTexture(cursor->icon, cursor->basic, true);

@@ -9,8 +9,9 @@
     #define SETTINGS_H
 
     #define LENGTH 1200
-    #define HIGHT 800
-    #define FRAME 30
+    #define HIGHT 900
+    #define FRAME 60
     #define BOARD_ESPACEMENT 100
+    #define BASE_THICKNESS 5
 
 #endif

@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
 
-sfColor COLORS[] = {
+static const sfColor COLORS[] = {
     {0, 0, 0, 255},
 };
 

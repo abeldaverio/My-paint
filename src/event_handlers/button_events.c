@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include "button.h"
+#include "board.h"
 
 static bool is_hover(sfRenderWindow *wnd, button_t *button)
 {
@@ -21,20 +22,20 @@ static bool is_hover(sfRenderWindow *wnd, button_t *button)
 void reset_other_buttons(button_t **buttons, size_t i)
 {
     for (size_t j = 0; buttons[j] != NULL; j++) {
-        if (j == i)
+        if (j == i || buttons[j]->main.type != TOOL)
             continue;
         buttons[j]->main.state = NONE;
     }
 }
 
 static bool check_the_button(sfRenderWindow *wnd, button_t *button,
-    cursor_t *cursor, sfEvent *event)
+    cursor_t *cursor, sfEvent *event, board_t *board)
 {
     if (is_hover(wnd, button)) {
         if (event->type == sfEvtMouseButtonPressed) {
             button->main.state = (button->main.state == PRESSED) ?
                 HOVER : PRESSED;
-            button->main.action(&button->main, cursor);
+            button->main.action(&button->main, cursor, board);
             return true;
         } else {
             button->main.state = (button->main.state == PRESSED) ?
@@ -48,10 +49,15 @@ static bool check_the_button(sfRenderWindow *wnd, button_t *button,
 }
 
 void check_button_click(sfRenderWindow *wnd, sfEvent *event,
-    button_t **buttons, cursor_t *cursor)
+    button_t **buttons, cursor_t *cursor, board_t *board)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
-        if (check_the_button(wnd, buttons[i], cursor, event))
+        if (buttons[i]->main.type == ONE_PRESS)
+            buttons[i]->main.state = NONE;
+    }
+    for (size_t i = 0; buttons[i] != NULL; i++) {
+        if (check_the_button(wnd, buttons[i], cursor, event, board) &&
+            buttons[i]->main.type == TOOL)
             reset_other_buttons(buttons, i);
     }
 }

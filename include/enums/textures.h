@@ -14,6 +14,8 @@ typedef enum textures_e {
     ERASER,
     BRUSH,
     PIPETTE,
+    BUCKET,
+    CLEAR,
 }textures_t;
 
 #endif /* !TEXTURE_ENUM_H */

@@ -13,12 +13,13 @@
     #include "button.h"
     #include "cursor.h"
     #include "board.h"
+    #include "window.h"
 
 //mains
 int my_paint(int argc, char **argv, char **env);
 
 //inits
-sfRenderWindow *init_window(char *name, int length, int higth, int frame);
+wnd_t *init_window_struct(char *name, int length, int higth, int frame);
 button_t **init_buttons(sfTexture **);
 sfTexture **init_textures(void);
 cursor_t *init_cursor(sfTexture **textures);
@@ -35,10 +36,10 @@ void draw_cursor(sfRenderWindow *wnd, cursor_t *cursor);
 void draw_board(sfRenderWindow *wnd, board_t *board);
 
 //event handlers
-void handle_events(sfRenderWindow *wnd, button_t **buttons,
+void handle_events(wnd_t *wnd_struct, button_t **buttons,
     cursor_t *cursor, board_t *board);
 void check_button_click(sfRenderWindow *wnd, sfEvent *event,
-    button_t **buttons, cursor_t *cursor);
+    button_t **buttons, cursor_t *cursor, board_t *board);
 
 //update functions
 void update_buttons(button_t **buttons);
@@ -47,6 +48,7 @@ void update_board(sfRenderWindow *wnd, cursor_t *cursor, board_t *board);
 //calculation functions
 sfVector2f sprite_size(sfTexture *text, sfVector2f size);
 bool cursor_on_board(sfRenderWindow *wnd);
+sfBool is_same_color(sfColor first, sfColor second);
 
 //free functions
 void free_elements(sfRenderWindow *wnd,

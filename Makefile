@@ -21,22 +21,26 @@ SRC	=	src/main_program/main.c	\
 		src/actions/eraser.c	\
 		src/actions/brush.c	\
 		src/actions/pipette.c	\
+		src/actions/bucket.c	\
+		src/actions/clear.c	\
 		src/actions/cursor/do_nothing.c	\
 		src/actions/cursor/draw_pencil.c	\
 		src/actions/cursor/erase.c	\
+		src/actions/cursor/fill_bucket.c	\
 		src/update/update_buttons.c	\
 		src/update/update_board.c	\
 		src/event_handlers/handle_event.c	\
 		src/event_handlers/button_events.c	\
 		src/calculations/sprite_size.c	\
 		src/calculations/check_cursor_position.c	\
+		src/calculations/is_same_color.c	\
 		src/free/free_elements.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
 NAME	=	my_paint
 
-LIB	=	./lib/libmini.a
+LIB	=	./lib/libmy.a
 
 CPPFLAGS	=	-iquote./include/
 

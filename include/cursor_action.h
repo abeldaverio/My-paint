@@ -23,13 +23,15 @@ void do_nothing(cursor_t *, board_t *, sfVector2i *);
 void draw_pencil(cursor_t *, board_t *, sfVector2i *);
 void erase(cursor_t *, board_t *, sfVector2i *);
 //void get_color(cursor_t *, board_t *, sfVector2i *);
+void fill_bucket(cursor_t *, board_t *, sfVector2i *);
 
 static const cursor_action_t CURSOR_ACT[] = {
     {BASIC, do_nothing},
     {PENCIL, draw_pencil},
     {ERASER, erase},
     {BRUSH, draw_pencil},
-    {PIPETTE, draw_pencil},
+    {PIPETTE, do_nothing},
+    {BUCKET, fill_bucket},
 };
 
 static const size_t NB_OF_ACT = sizeof(CURSOR_ACT) / sizeof(cursor_action_t);
