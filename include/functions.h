@@ -38,7 +38,7 @@ void draw_board(sfRenderWindow *wnd, board_t *board);
 //event handlers
 void handle_events(wnd_t *wnd_struct, button_t **buttons,
     cursor_t *cursor, board_t *board);
-void check_button_click(sfRenderWindow *wnd, sfEvent *event,
+void check_button_click(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board);
 
 //update functions

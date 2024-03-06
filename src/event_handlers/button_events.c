@@ -6,6 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
+#include "window.h"
 #include "button.h"
 #include "board.h"
 
@@ -48,7 +49,7 @@ static bool check_the_button(sfRenderWindow *wnd, button_t *button,
     return false;
 }
 
-void check_button_click(sfRenderWindow *wnd, sfEvent *event,
+void check_button_click(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
@@ -56,7 +57,8 @@ void check_button_click(sfRenderWindow *wnd, sfEvent *event,
             buttons[i]->main.state = NONE;
     }
     for (size_t i = 0; buttons[i] != NULL; i++) {
-        if (check_the_button(wnd, buttons[i], cursor, event, board) &&
+        if (check_the_button(wnd_struct->wnd, buttons[i], cursor,
+            &wnd_struct->Event, board) &&
             buttons[i]->main.type == TOOL)
             reset_other_buttons(buttons, i);
     }

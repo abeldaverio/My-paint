@@ -15,8 +15,7 @@ void handle_events(wnd_t *wnd_struct,
     while (sfRenderWindow_pollEvent(wnd_struct->wnd, &wnd_struct->Event)) {
         if (wnd_struct->Event.type == sfEvtClosed)
             sfRenderWindow_close(wnd_struct->wnd);
-        check_button_click(wnd_struct->wnd,
-            &wnd_struct->Event, buttons, cursor, board);
+        check_button_click(wnd_struct, buttons, cursor, board);
         if (sfMouse_isButtonPressed(sfMouseLeft) &&
             cursor_on_board(wnd_struct->wnd))
             update_board(wnd_struct->wnd, cursor, board);
