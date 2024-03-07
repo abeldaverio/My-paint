@@ -20,10 +20,10 @@ static bool is_hover(sfRenderWindow *wnd, button_t *button)
         pos.y <= mouse.y && mouse.y <= pos.y + size.y);
 }
 
-void reset_other_buttons(button_t **buttons, size_t i)
+void reset_other_buttons(button_t **buttons, size_t i, type_t type)
 {
     for (size_t j = 0; buttons[j] != NULL; j++) {
-        if (j == i || buttons[j]->main.type != TOOL)
+        if (j == i || buttons[j]->main.type != type)
             continue;
         buttons[j]->main.state = NONE;
     }
@@ -32,6 +32,8 @@ void reset_other_buttons(button_t **buttons, size_t i)
 static bool check_the_button(sfRenderWindow *wnd, button_t *button,
     cursor_t *cursor, sfEvent *event, board_t *board)
 {
+    if (button->main.type == COLOR && button->main.state == PRESSED)
+        return false;
     if (is_hover(wnd, button)) {
         if (event->type == sfEvtMouseButtonPressed) {
             button->main.state = (button->main.state == PRESSED) ?
@@ -58,8 +60,7 @@ void check_button_click(wnd_t *wnd_struct,
     }
     for (size_t i = 0; buttons[i] != NULL; i++) {
         if (check_the_button(wnd_struct->wnd, buttons[i], cursor,
-            &wnd_struct->Event, board) &&
-            buttons[i]->main.type == TOOL)
-            reset_other_buttons(buttons, i);
+            &wnd_struct->Event, board))
+            reset_other_buttons(buttons, i, buttons[i]->main.type);
     }
 }

@@ -10,6 +10,10 @@
 
 enum color_e {
     BLACK = 0,
+    RED,
+    BLUE,
+    GREEN,
+    TRANSPARENT,
 };
 
 #endif

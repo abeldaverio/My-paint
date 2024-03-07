@@ -12,6 +12,7 @@
 
 typedef struct board_s {
     sfImage *image;
+    sfRectangleShape *background;
     sfTexture *texture;
     sfSprite *sprite;
 }board_t;

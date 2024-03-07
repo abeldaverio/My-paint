@@ -11,43 +11,40 @@
 #include "board.h"
 #include "functions.h"
 
-board_t *empty_board(void)
+static sfImage *load_image(char *path)
 {
-    board_t *board = malloc(sizeof(board_t));
+    sfTexture *tmp;
+    sfImage *board = sfImage_createFromColor(LENGTH,
+        HIGHT - BOARD_ESPACEMENT, sfTransparent);
 
-    if (board == NULL)
-        return NULL;
-    board->image = sfImage_createFromColor(LENGTH, HIGHT - BOARD_ESPACEMENT,
-        sfWhite);
-    board->texture = sfTexture_create(LENGTH, HIGHT - BOARD_ESPACEMENT);
-    board->sprite = sfSprite_create();
-    if (board->image == NULL || board->texture == NULL ||
-        board->sprite == NULL)
-        return NULL;
-    sfSprite_setPosition(board->sprite, (sfVector2f){0, BOARD_ESPACEMENT});
-    return board;
+    if (path == NULL)
+        return board;
+    return sfImage_createFromFile(path);
 }
 
-board_t *load_image(char *path)
+static board_t *generate_board(char *path)
 {
     board_t *board = malloc(sizeof(board_t));
 
     if (board == NULL)
         return NULL;
-    board->image = sfImage_createFromFile(path);
+    board->image = load_image(path);
     board->texture = sfTexture_create(LENGTH, HIGHT - BOARD_ESPACEMENT);
     board->sprite = sfSprite_create();
+    board->background = sfRectangleShape_create();
     if (board->image == NULL || board->texture == NULL ||
-        board->sprite == NULL)
+        board->sprite == NULL || board->background == NULL)
         return NULL;
     sfSprite_setPosition(board->sprite, (sfVector2f){0, BOARD_ESPACEMENT});
+    sfRectangleShape_setSize(board->background,
+        (sfVector2f){LENGTH, HIGHT - BOARD_ESPACEMENT});
+    sfRectangleShape_setFillColor(board->background, sfWhite);
+    sfRectangleShape_setPosition(board->background,
+        (sfVector2f){0, BOARD_ESPACEMENT});
     return board;
 }
 
 board_t *init_image(char *path)
 {
-    if (path == NULL) {
-        return empty_board();
-    }
-    return load_image(path);
+    return generate_board(path);
 }

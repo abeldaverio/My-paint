@@ -9,7 +9,18 @@
 #include "button_states.h"
 #include "button.h"
 
-void update_style(object_t *button)
+static void update_color_style(object_t *button)
+{
+    for (size_t i = 0; i < COL_S_TAB_S; i++) {
+        if (COL_S_TAB[i].state == button->state) {
+            sfRectangleShape_setOutlineThickness(button->rect, 2);
+            sfRectangleShape_setOutlineColor(button->rect,
+                COL_S_TAB[i].bg_color);
+        }
+    }
+}
+
+static void update_option_style(object_t *button)
 {
     for (size_t i = 0; i < STATES_TAB_S; i++) {
         if (STATES_TAB[i].state == button->state) {
@@ -22,6 +33,9 @@ void update_style(object_t *button)
 void update_buttons(button_t **buttons)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
-        update_style(&buttons[i]->main);
+        if (buttons[i]->main.type == COLOR)
+            update_color_style(&buttons[i]->main);
+        else
+            update_option_style(&buttons[i]->main);
     }
 }

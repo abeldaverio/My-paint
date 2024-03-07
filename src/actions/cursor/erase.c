@@ -26,7 +26,7 @@ static void draw_pixel(cursor_t *cursor, board_t *board,
         mouse->x + (coordinates->x - (cursor->thickness / 2)),
         mouse->y - BOARD_ESPACEMENT +
         (coordinates->y - (cursor->thickness / 2)),
-        sfWhite);
+        sfTransparent);
 }
 
 void erase(cursor_t *cursor, board_t *board, sfVector2i *mouse)

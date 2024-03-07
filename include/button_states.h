@@ -23,6 +23,15 @@ static const check_state_t STATES_TAB[] = {
     {OPEN, {0, 255, 255, 255}},
 };
 
+static const check_state_t COL_S_TAB[] = {
+    {NONE, {0, 0, 0, 0}},
+    {HOVER, {0, 100, 100, 255}},
+    {PRESSED, {0, 0, 200, 255}},
+    {OPEN, {0, 255, 255, 255}},
+};
+
+static const size_t COL_S_TAB_S = sizeof(COL_S_TAB) / sizeof(check_state_t);
+
 static const size_t STATES_TAB_S = sizeof(STATES_TAB) / sizeof(check_state_t);
 
 #endif /* !BUTTON_STATES_H */

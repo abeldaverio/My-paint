@@ -51,7 +51,7 @@ bool cursor_on_board(sfRenderWindow *wnd);
 sfBool is_same_color(sfColor first, sfColor second);
 
 //free functions
-void free_elements(sfRenderWindow *wnd,
+void free_elements(wnd_t *wnd_strcut,
     button_t **buttons, sfTexture **textures, cursor_t *cursor);
 void free_more_elements(board_t *board);
 

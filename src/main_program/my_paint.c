@@ -31,7 +31,7 @@ static bool start_window(char *argv)
         sfRenderWindow_clear(wnd_struct->wnd, (sfColor){230, 230, 210, 255});
         handle_events(wnd_struct, buttons, cursor, board);
     }
-    free_elements(wnd_struct->wnd, buttons, textures, cursor);
+    free_elements(wnd_struct, buttons, textures, cursor);
     free_more_elements(board);
     return true;
 }

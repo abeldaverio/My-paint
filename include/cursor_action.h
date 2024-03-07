@@ -22,7 +22,7 @@ typedef struct cursor_action_s {
 void do_nothing(cursor_t *, board_t *, sfVector2i *);
 void draw_pencil(cursor_t *, board_t *, sfVector2i *);
 void erase(cursor_t *, board_t *, sfVector2i *);
-//void get_color(cursor_t *, board_t *, sfVector2i *);
+void copy_color(cursor_t *, board_t *, sfVector2i *);
 void fill_bucket(cursor_t *, board_t *, sfVector2i *);
 
 static const cursor_action_t CURSOR_ACT[] = {
@@ -30,7 +30,7 @@ static const cursor_action_t CURSOR_ACT[] = {
     {PENCIL, draw_pencil},
     {ERASER, erase},
     {BRUSH, draw_pencil},
-    {PIPETTE, do_nothing},
+    {PIPETTE, copy_color},
     {BUCKET, fill_bucket},
 };
 

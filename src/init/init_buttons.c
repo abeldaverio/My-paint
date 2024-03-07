@@ -29,7 +29,7 @@ static button_t *init_button(int i, sfTexture **textures)
         sprite_size(textures[INIT_B_TAB[i].icon_nb], INIT_B_TAB[i].size));
     sfSprite_setPosition(button->main.icon, INIT_B_TAB[i].pos);
     button->main.action = INIT_B_TAB[i].action;
-    button->main.state = NONE;
+    button->main.state = (INIT_B_TAB[i].icon_nb == BLACK_I) ? PRESSED : NONE;
     button->main.type = INIT_B_TAB[i].type;
     button->main.hidden = false;
     return button;

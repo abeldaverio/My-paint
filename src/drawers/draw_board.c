@@ -12,5 +12,6 @@ void draw_board(sfRenderWindow *wnd, board_t *board)
 {
     sfTexture_updateFromImage(board->texture, board->image, 0, 0);
     sfSprite_setTexture(board->sprite, board->texture, sfFalse);
+    sfRenderWindow_drawRectangleShape(wnd, board->background, NULL);
     sfRenderWindow_drawSprite(wnd, board->sprite, NULL);
 }

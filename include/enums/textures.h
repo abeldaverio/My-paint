@@ -16,6 +16,12 @@ typedef enum textures_e {
     PIPETTE,
     BUCKET,
     CLEAR,
+    FLIP_HORIZONTAL,
+    FLIP_VERTICAL,
+    RED_I,
+    BLACK_I,
+    BLUE_I,
+    GREEN_I,
 }textures_t;
 
 #endif /* !TEXTURE_ENUM_H */

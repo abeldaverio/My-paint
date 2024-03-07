@@ -10,11 +10,13 @@
 #include "button.h"
 #include "cursor.h"
 #include "board.h"
+#include "window.h"
 
 static void destroy_buttons(button_t **buttons)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
         sfRectangleShape_destroy(buttons[i]->main.rect);
+        sfSprite_destroy(buttons[i]->main.icon);
         free(buttons[i]);
     }
     free(buttons);
@@ -37,15 +39,17 @@ static void destroy_cursor(cursor_t *cursor)
 static void destroy_board(board_t *board)
 {
     sfImage_destroy(board->image);
+    sfRectangleShape_destroy(board->background);
     sfSprite_destroy(board->sprite);
     sfTexture_destroy(board->texture);
     free(board);
 }
 
-void free_elements(sfRenderWindow *wnd, button_t **buttons,
+void free_elements(wnd_t *wnd_struct, button_t **buttons,
     sfTexture **textures, cursor_t *cursor)
 {
-    sfRenderWindow_destroy(wnd);
+    sfRenderWindow_destroy(wnd_struct->wnd);
+    free(wnd_struct);
     destroy_buttons(buttons);
     destroy_textures(textures);
     destroy_cursor(cursor);

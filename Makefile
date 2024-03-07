@@ -23,7 +23,14 @@ SRC	=	src/main_program/main.c	\
 		src/actions/pipette.c	\
 		src/actions/bucket.c	\
 		src/actions/clear.c	\
+		src/actions/flip_horizontal.c	\
+		src/actions/flip_vertical.c	\
+		src/actions/colors/red.c	\
+		src/actions/colors/black.c	\
+		src/actions/colors/blue.c	\
+		src/actions/colors/green.c	\
 		src/actions/cursor/do_nothing.c	\
+		src/actions/cursor/copy_color.c	\
 		src/actions/cursor/draw_pencil.c	\
 		src/actions/cursor/erase.c	\
 		src/actions/cursor/fill_bucket.c	\
