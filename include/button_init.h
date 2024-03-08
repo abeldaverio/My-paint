@@ -68,8 +68,8 @@ static const init_b_t INIT_B_TAB[] = {
     {{18, 18}, {505, 32}, PINK_I, COLOR, set_pink},
     {{18, 18}, {529, 32}, BEIGE_I, COLOR, set_beige},
     {{18, 18}, {552, 32}, WHITE_I, COLOR, set_white},
-    {{18, 18}, {574, 32}, GREY_I, COLOR, set_grey},
-    {{18, 18}, {596, 32}, FUSHIA_I, COLOR, set_fushia},
+    {{18, 18}, {576, 32}, GREY_I, COLOR, set_grey},
+    {{18, 18}, {600, 32}, FUSHIA_I, COLOR, set_fushia},
 };
 
 static const size_t INIT_B_TAB_SIZE = sizeof(INIT_B_TAB) / sizeof(init_b_t);
