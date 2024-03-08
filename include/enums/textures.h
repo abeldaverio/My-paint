@@ -22,6 +22,16 @@ typedef enum textures_e {
     BLACK_I,
     BLUE_I,
     GREEN_I,
+    ORANGE_I,
+    CYAN_I,
+    PURPLE_I,
+    YELLOW_I,
+    BROWN_I,
+    PINK_I,
+    BEIGE_I,
+    WHITE_I,
+    GREY_I,
+    FUSHIA_I,
 }textures_t;
 
 #endif /* !TEXTURE_ENUM_H */

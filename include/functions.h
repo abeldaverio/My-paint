@@ -43,7 +43,7 @@ void check_button_click(wnd_t *wnd_struct,
 
 //update functions
 void update_buttons(button_t **buttons);
-void update_board(sfRenderWindow *wnd, cursor_t *cursor, board_t *board);
+void update_board(wnd_t *wnd_struct, cursor_t *cursor, board_t *board);
 
 //calculation functions
 sfVector2f sprite_size(sfTexture *text, sfVector2f size);

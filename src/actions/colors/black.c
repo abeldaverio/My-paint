@@ -7,9 +7,10 @@
 
 #include "cursor.h"
 #include "board.h"
+#include "button.h"
 #include "colors.h"
 
-void set_black(struct object_s *, cursor_t *cursor, board_t *)
+void set_black(object_t *, cursor_t *cursor, board_t *)
 {
     cursor->color = BLACK;
 }

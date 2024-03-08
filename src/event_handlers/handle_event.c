@@ -18,6 +18,6 @@ void handle_events(wnd_t *wnd_struct,
         check_button_click(wnd_struct, buttons, cursor, board);
         if (sfMouse_isButtonPressed(sfMouseLeft) &&
             cursor_on_board(wnd_struct->wnd))
-            update_board(wnd_struct->wnd, cursor, board);
+            update_board(wnd_struct, cursor, board);
     }
 }

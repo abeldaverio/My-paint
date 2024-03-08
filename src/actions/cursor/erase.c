@@ -29,7 +29,7 @@ static void draw_pixel(cursor_t *cursor, board_t *board,
         sfTransparent);
 }
 
-void erase(cursor_t *cursor, board_t *board, sfVector2i *mouse)
+void erase(cursor_t *cursor, board_t *board, sfVector2i *mouse, sfEvent *)
 {
     sfVector2i coordinates = {0, 0};
 

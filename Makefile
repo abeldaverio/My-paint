@@ -29,6 +29,16 @@ SRC	=	src/main_program/main.c	\
 		src/actions/colors/black.c	\
 		src/actions/colors/blue.c	\
 		src/actions/colors/green.c	\
+		src/actions/colors/orange.c	\
+		src/actions/colors/cyan.c	\
+		src/actions/colors/purple.c	\
+		src/actions/colors/yellow.c	\
+		src/actions/colors/brown.c	\
+		src/actions/colors/pink.c	\
+		src/actions/colors/beige.c	\
+		src/actions/colors/white.c	\
+		src/actions/colors/grey.c	\
+		src/actions/colors/fushia.c	\
 		src/actions/cursor/do_nothing.c	\
 		src/actions/cursor/copy_color.c	\
 		src/actions/cursor/draw_pencil.c	\

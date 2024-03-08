@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2024
-** blue
+** orange
 ** File description:
-** set blue
+** set orange
 */
 
 #include "cursor.h"
@@ -10,7 +10,7 @@
 #include "button.h"
 #include "colors.h"
 
-void set_blue(object_t *, cursor_t *cursor, board_t *)
+void set_orange(object_t *, cursor_t *cursor, board_t *)
 {
-    cursor->color = BLUE;
+    cursor->color = ORANGE;
 }

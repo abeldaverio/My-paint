@@ -13,6 +13,6 @@ bool cursor_on_board(sfRenderWindow *wnd)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(wnd);
 
-    return ((0 <= mouse.x && mouse.x <= LENGTH) &&
-        (BOARD_ESPACEMENT <= mouse.y && mouse.y <= HIGHT));
+    return ((0 <= mouse.x && mouse.x < LENGTH) &&
+        (BOARD_ESPACEMENT <= mouse.y && mouse.y < HIGHT));
 }

@@ -13,6 +13,16 @@ enum color_e {
     RED,
     BLUE,
     GREEN,
+    ORANGE,
+    CYAN,
+    PURPLE,
+    YELLOW,
+    BROWN,
+    PINK,
+    BEIGE,
+    WHITE,
+    GREY,
+    FUSHIA,
     TRANSPARENT,
 };
 

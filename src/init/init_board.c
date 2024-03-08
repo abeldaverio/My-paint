@@ -13,7 +13,6 @@
 
 static sfImage *load_image(char *path)
 {
-    sfTexture *tmp;
     sfImage *board = sfImage_createFromColor(LENGTH,
         HIGHT - BOARD_ESPACEMENT, sfTransparent);
 

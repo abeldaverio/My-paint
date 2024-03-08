@@ -10,7 +10,7 @@
 
     #define LENGTH 1200
     #define HIGHT 900
-    #define FRAME 2000
+    #define FRAME 100
     #define BOARD_ESPACEMENT 100
     #define BASE_THICKNESS 10
 

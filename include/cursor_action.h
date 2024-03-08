@@ -15,15 +15,15 @@
 
 typedef struct cursor_action_s {
     textures_t mode;
-    void (*action)(cursor_t *, board_t *, sfVector2i *);
+    void (*action)(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 }cursor_action_t;
 
 //cursor action functions
-void do_nothing(cursor_t *, board_t *, sfVector2i *);
-void draw_pencil(cursor_t *, board_t *, sfVector2i *);
-void erase(cursor_t *, board_t *, sfVector2i *);
-void copy_color(cursor_t *, board_t *, sfVector2i *);
-void fill_bucket(cursor_t *, board_t *, sfVector2i *);
+void do_nothing(cursor_t *, board_t *, sfVector2i *, sfEvent *);
+void draw_pencil(cursor_t *, board_t *, sfVector2i *, sfEvent *);
+void erase(cursor_t *, board_t *, sfVector2i *, sfEvent *);
+void copy_color(cursor_t *, board_t *, sfVector2i *, sfEvent *);
+void fill_bucket(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 
 static const cursor_action_t CURSOR_ACT[] = {
     {BASIC, do_nothing},

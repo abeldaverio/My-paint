@@ -11,7 +11,7 @@
 #include "colors.h"
 #include "functions.h"
 
-void copy_color(cursor_t *cursor, board_t *board, sfVector2i *mouse)
+void copy_color(cursor_t *cursor, board_t *board, sfVector2i *mouse, sfEvent *)
 {
     sfColor tmp = sfImage_getPixel(board->image,
         mouse->x, mouse->y - BOARD_ESPACEMENT);

@@ -24,6 +24,16 @@ static const char *INIT_TEXTURE_TAB[] = {
     "assets/colors/black.png",
     "assets/colors/blue.png",
     "assets/colors/green.png",
+    "assets/colors/orange.png",
+    "assets/colors/cyan.png",
+    "assets/colors/purple.png",
+    "assets/colors/yellow.png",
+    "assets/colors/brown.png",
+    "assets/colors/pink.png",
+    "assets/colors/beige.png",
+    "assets/colors/white.png",
+    "assets/colors/grey.png",
+    "assets/colors/fushia.png",
 };
 
 static const size_t TEXTURE_TAB_S = sizeof(INIT_TEXTURE_TAB) / sizeof(char *);
