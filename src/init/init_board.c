@@ -6,10 +6,23 @@
 */
 
 #include <SFML/Graphics.h>
+#include <SFML/Graphics/Image.h>
+#include <SFML/Graphics/Rect.h>
+#include <SFML/Graphics/Types.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include "settings.h"
 #include "board.h"
 #include "functions.h"
+
+static sfImage *create_board(sfImage *board, char *path)
+{
+    sfImage *image = sfImage_createFromFile(path);
+
+    sfImage_copyImage(board, image, 0, 0, (sfIntRect){}, true);
+    sfImage_destroy(image);
+    return (board);
+}
 
 static sfImage *load_image(char *path)
 {
@@ -18,7 +31,7 @@ static sfImage *load_image(char *path)
 
     if (path == NULL)
         return board;
-    return sfImage_createFromFile(path);
+    return create_board(board, path);
 }
 
 static board_t *generate_board(char *path)
