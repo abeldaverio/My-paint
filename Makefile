@@ -48,6 +48,7 @@ SRC	=	src/main_program/main.c	\
 		src/update/update_board.c	\
 		src/event_handlers/handle_event.c	\
 		src/event_handlers/button_events.c	\
+		src/event_handlers/resize_window.c	\
 		src/calculations/sprite_size.c	\
 		src/calculations/check_cursor_position.c	\
 		src/calculations/is_same_color.c	\
@@ -87,6 +88,9 @@ fclean:	clean
 
 debug: CFLAGS += -ggdb3
 debug: re
+
+asan:	CC	=	clang -fsanitize=address
+asan:	re
 
 re:	fclean	all
 

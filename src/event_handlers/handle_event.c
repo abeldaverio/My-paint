@@ -6,6 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
+#include <SFML/Window/Event.h>
 #include "button.h"
 #include "functions.h"
 
@@ -19,5 +20,7 @@ void handle_events(wnd_t *wnd_struct,
         if (sfMouse_isButtonPressed(sfMouseLeft) &&
             cursor_on_board(wnd_struct->wnd))
             update_board(wnd_struct, cursor, board);
+        if (wnd_struct->Event.type == sfEvtResized)
+            resize_event(wnd_struct);
     }
 }
