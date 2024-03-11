@@ -23,6 +23,7 @@ SRC	=	src/main_program/main.c	\
 		src/actions/pipette.c	\
 		src/actions/bucket.c	\
 		src/actions/clear.c	\
+		src/actions/open_menu.c	\
 		src/actions/flip_horizontal.c	\
 		src/actions/flip_vertical.c	\
 		src/actions/colors/red.c	\

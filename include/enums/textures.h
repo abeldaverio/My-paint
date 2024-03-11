@@ -10,6 +10,8 @@
 
 typedef enum textures_e {
     BASIC = 0,
+    FILE,
+    SAVE,
     PENCIL,
     ERASER,
     BRUSH,

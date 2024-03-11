@@ -9,7 +9,7 @@
 #include "cursor.h"
 #include "functions.h"
 
-void flip_vertical(object_t *, cursor_t *, board_t *board)
+void flip_vertical(button_t *, cursor_t *, board_t *board)
 {
     sfImage_flipVertically(board->image);
 }

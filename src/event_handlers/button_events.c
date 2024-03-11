@@ -10,11 +10,11 @@
 #include "button.h"
 #include "board.h"
 
-static bool is_hover(sfRenderWindow *wnd, button_t *button)
+static bool is_hover(sfRenderWindow *wnd, object_t *button)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(wnd);
-    sfVector2f pos = sfRectangleShape_getPosition(button->main.rect);
-    sfVector2f size = sfRectangleShape_getSize(button->main.rect);
+    sfVector2f pos = sfRectangleShape_getPosition(button->rect);
+    sfVector2f size = sfRectangleShape_getSize(button->rect);
 
     return (pos.x <= mouse.x && mouse.x <= pos.x + size.x &&
         pos.y <= mouse.y && mouse.y <= pos.y + size.y);
@@ -34,11 +34,11 @@ static bool check_the_button(sfRenderWindow *wnd, button_t *button,
 {
     if (button->main.type == COLOR && button->main.state == PRESSED)
         return false;
-    if (is_hover(wnd, button)) {
+    if (is_hover(wnd, &button->main)) {
         if (event->type == sfEvtMouseButtonPressed) {
             button->main.state = (button->main.state == PRESSED) ?
                 HOVER : PRESSED;
-            button->main.action(&button->main, cursor, board);
+            button->main.action(button, cursor, board);
             return true;
         } else {
             button->main.state = (button->main.state == PRESSED) ?
@@ -51,16 +51,46 @@ static bool check_the_button(sfRenderWindow *wnd, button_t *button,
     return false;
 }
 
+static void hide_menu(object_t **options)
+{
+    for (size_t i = 0; options[i] != NULL; i++)
+        options[i]->hidden = true;
+}
+
+static void check_options(wnd_t *wnd_struct, button_t *button,
+    cursor_t *cursor, board_t *board)
+{
+    for (size_t i = 0; button->options[i] != NULL; i++) {
+        if (is_hover(wnd_struct->wnd, button->options[i])) {
+            button->options[i]->state = HOVER;
+        } else {
+            button->options[i]->state = NONE;
+        }
+        if (is_hover(wnd_struct->wnd, button->options[i]) &&
+            wnd_struct->Event.type == sfEvtMouseButtonPressed) {
+            button->options[i]->action(button, cursor, board);
+        }
+    }
+}
+
 void check_button_click(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
         if (buttons[i]->main.type == ONE_PRESS)
             buttons[i]->main.state = NONE;
+        if (wnd_struct->Event.type == sfEvtMouseButtonPressed &&
+            buttons[i]->main.type == DROP) {
+            buttons[i]->main.state = NONE;
+            hide_menu(buttons[i]->options);
+        }
     }
     for (size_t i = 0; buttons[i] != NULL; i++) {
         if (check_the_button(wnd_struct->wnd, buttons[i], cursor,
             &wnd_struct->Event, board))
             reset_other_buttons(buttons, i, buttons[i]->main.type);
+        if (buttons[i]->options != NULL) {
+            check_options(wnd_struct, buttons[i], cursor, board);
+        }
     }
 }

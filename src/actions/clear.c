@@ -10,7 +10,7 @@
 #include "functions.h"
 #include "settings.h"
 
-void clear_board(object_t *, cursor_t *, board_t *board)
+void clear_board(button_t *, cursor_t *, board_t *board)
 {
     sfImage_destroy(board->image);
     board->image = sfImage_createFromColor(LENGTH, HIGHT - BOARD_ESPACEMENT,

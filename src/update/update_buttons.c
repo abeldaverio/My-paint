@@ -30,6 +30,23 @@ static void update_option_style(object_t *button)
     }
 }
 
+static void update_option(size_t j, object_t **options)
+{
+    for (size_t i = 0; i < STATES_TAB_S; i++) {
+            if (STATES_TAB[i].state == options[j]->state) {
+                sfRectangleShape_setFillColor(options[j]->rect,
+                    STATES_TAB[i].bg_color);
+            }
+        }
+}
+
+static void update_options(object_t **options)
+{
+    for (size_t j = 0; options[j] != NULL; j++) {
+        update_option(j, options);
+    }
+}
+
 void update_buttons(button_t **buttons)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
@@ -37,5 +54,7 @@ void update_buttons(button_t **buttons)
             update_color_style(&buttons[i]->main);
         else
             update_option_style(&buttons[i]->main);
+        if (buttons[i]->options != NULL)
+            update_options(buttons[i]->options);
     }
 }

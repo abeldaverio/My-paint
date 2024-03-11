@@ -12,6 +12,8 @@
 
 static const char *INIT_TEXTURE_TAB[] = {
     "assets/icons/basic.png",
+    "assets/icons/file.png",
+    "assets/icons/save.png",
     "assets/icons/pencil.png",
     "assets/icons/eraser.png",
     "assets/icons/brush.png",

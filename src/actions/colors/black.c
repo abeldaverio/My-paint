@@ -10,7 +10,7 @@
 #include "button.h"
 #include "colors.h"
 
-void set_black(object_t *, cursor_t *cursor, board_t *)
+void set_black(button_t *, cursor_t *cursor, board_t *)
 {
     cursor->color = BLACK;
 }

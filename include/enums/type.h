@@ -12,6 +12,7 @@ typedef enum type_e {
     TOOL = 0,
     ONE_PRESS,
     COLOR,
+    DROP,
 }type_t;
 
 #endif /* !BUTTON_TYPES_H */

@@ -12,11 +12,24 @@
 #include "board.h"
 #include "window.h"
 
+static void destroy_menu(button_t *button)
+{
+    for (size_t i = 0; button->options[i] != NULL; i++) {
+        sfSprite_destroy(button->options[i]->icon);
+        sfRectangleShape_destroy(button->options[i]->rect);
+        free(button->options[i]);
+    }
+    free(button->options);
+}
+
 static void destroy_buttons(button_t **buttons)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
         sfRectangleShape_destroy(buttons[i]->main.rect);
         sfSprite_destroy(buttons[i]->main.icon);
+        if (buttons[i]->options != NULL) {
+            destroy_menu(buttons[i]);
+        }
         free(buttons[i]);
     }
     free(buttons);
