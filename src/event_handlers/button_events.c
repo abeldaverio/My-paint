@@ -61,12 +61,14 @@ static void check_options(wnd_t *wnd_struct, button_t *button,
     cursor_t *cursor, board_t *board)
 {
     for (size_t i = 0; button->options[i] != NULL; i++) {
-        if (is_hover(wnd_struct->wnd, button->options[i])) {
+        if (button->options[i]->hidden == false &&
+            is_hover(wnd_struct->wnd, button->options[i])) {
             button->options[i]->state = HOVER;
         } else {
             button->options[i]->state = NONE;
         }
-        if (is_hover(wnd_struct->wnd, button->options[i]) &&
+        if (button->options[i]->hidden == false &&
+            is_hover(wnd_struct->wnd, button->options[i]) &&
             wnd_struct->Event.type == sfEvtMouseButtonPressed) {
             button->options[i]->action(button, cursor, board);
         }
