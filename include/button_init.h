@@ -55,7 +55,7 @@ static const init_b_t INIT_FILE_MENU[] = {
 };
 
 static const init_b_t INIT_B_TAB[] = {
-    {{60, 30}, {0, 0}, FILE, DROP, open_menu, INIT_FILE_MENU,
+    {{60, 30}, {0, 0}, FILE_I, DROP, open_menu, INIT_FILE_MENU,
         sizeof(INIT_FILE_MENU) / sizeof(init_b_t)},
     {{40, 40}, {5, 40}, PENCIL, TOOL, pencil_action, NULL, 0},
     {{40, 40}, {50, 40}, ERASER, TOOL, eraser_action, NULL, 0},

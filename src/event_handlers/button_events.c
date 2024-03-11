@@ -51,10 +51,12 @@ static bool check_the_button(sfRenderWindow *wnd, button_t *button,
     return false;
 }
 
-static void hide_menu(object_t **options)
+static void hide_menu(sfRenderWindow *wnd, object_t **options)
 {
-    for (size_t i = 0; options[i] != NULL; i++)
-        options[i]->hidden = true;
+    for (size_t i = 0; options[i] != NULL; i++) {
+        if (!is_hover(wnd, options[i]))
+            options[i]->hidden = true;
+    }
 }
 
 static bool check_options(wnd_t *wnd_struct, button_t *button,
@@ -71,9 +73,11 @@ static bool check_options(wnd_t *wnd_struct, button_t *button,
             is_hover(wnd_struct->wnd, button->options[i]) &&
             wnd_struct->Event.type == sfEvtMouseButtonPressed) {
             button->options[i]->action(button, cursor, board);
+            button->options[i]->hidden = true;
             return true;
         }
     }
+    return false;
 }
 
 void check_button_click(wnd_t *wnd_struct,
@@ -85,7 +89,7 @@ void check_button_click(wnd_t *wnd_struct,
         if (wnd_struct->Event.type == sfEvtMouseButtonPressed &&
             buttons[i]->main.type == DROP) {
             buttons[i]->main.state = NONE;
-            hide_menu(buttons[i]->options);
+            hide_menu(wnd_struct->wnd, buttons[i]->options);
         }
     }
     for (size_t i = 0; buttons[i] != NULL; i++) {
