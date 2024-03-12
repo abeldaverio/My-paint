@@ -77,8 +77,8 @@ static const init_b_t INIT_FILE_MENU[] = {
 };
 
 static const init_b_t INIT_EDIT_MENU[] = {
-    {{60, 40}, {60, 30}, PENCIL, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {60, 70}, ERASER, DROP, eraser_help, NULL, 0},
+    {{60, 40}, {60, 30}, PENCIL, DROP, pencil_action, NULL, 0},
+    {{60, 40}, {60, 70}, ERASER, DROP, eraser_action, NULL, 0},
 };
 
 static const init_b_t INIT_HELP_MENU[] = {
