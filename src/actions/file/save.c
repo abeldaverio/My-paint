@@ -51,7 +51,7 @@ static char *user_input(void)
     char *input = NULL;
     char *dest = NULL;
 
-    write(1, "Enter  name: ", 12);
+    write(1, "Enter  name (supported format are jpg, png and bmp): ", 53);
     while (input_size <= 1) {
         input_size = getline(&input, &n, stdin);
     }

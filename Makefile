@@ -27,6 +27,14 @@ SRC	=	src/main_program/main.c	\
 		src/actions/file/save.c	\
 		src/actions/flip_horizontal.c	\
 		src/actions/flip_vertical.c	\
+		src/actions/help/pencil.c	\
+		src/actions/help/brush.c	\
+		src/actions/help/eraser.c	\
+		src/actions/help/pipette.c	\
+		src/actions/help/bucket.c	\
+		src/actions/help/clear.c	\
+		src/actions/help/flip_horizontal.c	\
+		src/actions/help/flip_vertical.c	\
 		src/actions/colors/red.c	\
 		src/actions/colors/black.c	\
 		src/actions/colors/blue.c	\
