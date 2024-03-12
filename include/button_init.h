@@ -53,11 +53,18 @@ void save_image(button_t *, cursor_t *, board_t *);
 
 static const init_b_t INIT_FILE_MENU[] = {
     {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
+    {{60, 30}, {0, 60}, IMPORT, DROP, save_image, NULL, 0},
+};
+
+static const init_b_t INIT_HELP_MENU[] = {
+    {{60, 30}, {60, 30}, TUTO, DROP, save_image, NULL, 0},
 };
 
 static const init_b_t INIT_B_TAB[] = {
     {{60, 30}, {0, 0}, FILE_I, DROP, open_menu, INIT_FILE_MENU,
         sizeof(INIT_FILE_MENU) / sizeof(init_b_t)},
+    {{60, 30}, {60, 0}, HELP_I, DROP, open_menu, INIT_HELP_MENU,
+        sizeof(INIT_HELP_MENU) / sizeof(init_b_t)},
     {{40, 40}, {5, 40}, PENCIL, TOOL, pencil_action, NULL, 0},
     {{40, 40}, {50, 40}, ERASER, TOOL, eraser_action, NULL, 0},
     {{40, 40}, {95, 40}, BRUSH, TOOL, brush_action, NULL, 0},
