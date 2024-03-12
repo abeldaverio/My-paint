@@ -73,18 +73,24 @@ void set_enormous(button_t *, cursor_t *, board_t *);
 static const init_b_t INIT_FILE_MENU[] = {
     {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
     {{60, 30}, {0, 60}, IMPORT, DROP, save_image, NULL, 0},
+    {{60, 30}, {0, 90}, IMPORT, DROP, clear_board, NULL, 0},
+};
+
+static const init_b_t INIT_EDIT_MENU[] = {
+    {{60, 40}, {60, 30}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {60, 70}, ERASER, DROP, eraser_help, NULL, 0},
 };
 
 static const init_b_t INIT_HELP_MENU[] = {
-    {{60, 40}, {60, 30}, PENCIL, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {60, 70}, ERASER, DROP, eraser_help, NULL, 0},
-    {{60, 40}, {60, 110}, BRUSH, DROP, brush_help, NULL, 0},
-    {{60, 40}, {60, 150}, PIPETTE, DROP, pipette_help, NULL, 0},
-    {{60, 40}, {60, 190}, BUCKET, DROP, bucket_help, NULL, 0},
-    {{60, 40}, {60, 230}, CLEAR, DROP, clear_help, NULL, 0},
-    {{60, 40}, {60, 270}, FLIP_HORIZONTAL, DROP,
+    {{60, 40}, {120, 30}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {120, 70}, ERASER, DROP, eraser_help, NULL, 0},
+    {{60, 40}, {120, 110}, BRUSH, DROP, brush_help, NULL, 0},
+    {{60, 40}, {120, 150}, PIPETTE, DROP, pipette_help, NULL, 0},
+    {{60, 40}, {120, 190}, BUCKET, DROP, bucket_help, NULL, 0},
+    {{60, 40}, {120, 230}, CLEAR, DROP, clear_help, NULL, 0},
+    {{60, 40}, {120, 270}, FLIP_HORIZONTAL, DROP,
         flip_horizontal_help, NULL, 0},
-    {{60, 40}, {60, 310}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
+    {{60, 40}, {120, 310}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
 };
 
 static const init_b_t INIT_SIZE_MENU[] = {
@@ -99,7 +105,9 @@ static const init_b_t INIT_SIZE_MENU[] = {
 static const init_b_t INIT_B_TAB[] = {
     {{60, 30}, {0, 0}, FILE_I, DROP, open_menu, INIT_FILE_MENU,
         sizeof(INIT_FILE_MENU) / sizeof(init_b_t)},
-    {{60, 30}, {60, 0}, HELP_I, DROP, open_menu, INIT_HELP_MENU,
+    {{60, 30}, {60, 0}, FILE_I, DROP, open_menu, INIT_EDIT_MENU,
+        sizeof(INIT_EDIT_MENU) / sizeof(init_b_t)},
+    {{60, 30}, {120, 0}, HELP_I, DROP, open_menu, INIT_HELP_MENU,
         sizeof(INIT_HELP_MENU) / sizeof(init_b_t)},
     {{40, 40}, {5, 40}, PENCIL, TOOL, pencil_action, NULL, 0},
     {{40, 40}, {50, 40}, ERASER, TOOL, eraser_action, NULL, 0},
