@@ -24,9 +24,12 @@ static _Bool my_endcmp(char *str1, char *str2)
 
     if (size2 > size1)
         return false;
-    for (int i = size1; i > 0; ++i)
-        if (str2[size2 - (i - size1)] != str1[i])
+    for (int i = size1 - 1; size2 > 0; --i) {
+        if (str2[size2 - 1] != str1[i]) {
             return false;
+        }
+        size2--;
+    }
     return true;
 }
 
@@ -53,6 +56,7 @@ static char *user_input(void)
         input_size = getline(&input, &n, stdin);
     }
     dest = my_strndup(input, input_size - 1);
+    free(input);
     return (dest);
 }
 
@@ -61,11 +65,14 @@ void save_image(button_t *, cursor_t *, board_t *board)
     char *input = user_input();
     sfImage *copy = sfImage_createFromColor(LENGTH,
         HIGHT - BOARD_ESPACEMENT, sfWhite);
+    char *new_string = NULL;
 
     if (my_endcmp(input, ".jpg") == false && my_endcmp(input, ".png") == false
         && my_endcmp(input, ".bmp") == false)
-        input = my_strconcat(input, ".jpg");
+        new_string = my_strconcat(input, ".jpg");
     sfImage_copyImage(copy, board->image, 0, 0, (sfIntRect){}, true);
-    sfImage_saveToFile(copy, input);
+    sfImage_saveToFile(copy, new_string);
+    sfImage_destroy(copy);
+    free(new_string);
     free(input);
 }
