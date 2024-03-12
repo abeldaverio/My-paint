@@ -33,17 +33,6 @@ static _Bool my_endcmp(char *str1, char *str2)
     return true;
 }
 
-static char *my_strndup(char *src, int n)
-{
-    int size = n > my_strlen(src) ? my_strlen(src) : n;
-    char *dest = malloc(sizeof(char) * size + 1);
-
-    for (int i = 0; i < size; ++i)
-        dest[i] = src[i];
-    dest[size] = '\0';
-    return (dest);
-}
-
 static char *user_input(void)
 {
     size_t n = 0;
@@ -51,9 +40,14 @@ static char *user_input(void)
     char *input = NULL;
     char *dest = NULL;
 
-    write(1, "Enter  name (supported format are jpg, png and bmp): ", 53);
+    my_putstr("Enter  name (supported format are jpg, png and bmp) "
+        "(CANCEL for cancel):\n");
     while (input_size <= 1) {
         input_size = getline(&input, &n, stdin);
+    }
+    if (my_strcmp(input, "CANCEL\n")) {
+        free(input);
+        return NULL;
     }
     dest = my_strndup(input, input_size - 1);
     free(input);
@@ -67,6 +61,8 @@ void save_image(button_t *, cursor_t *, board_t *board)
         HIGHT - BOARD_ESPACEMENT, sfWhite);
     char *new_string = NULL;
 
+    if (input == NULL)
+        return;
     if (my_endcmp(input, ".jpg") == false && my_endcmp(input, ".png") == false
         && my_endcmp(input, ".bmp") == false)
         new_string = my_strconcat(input, ".jpg");
