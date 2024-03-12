@@ -17,6 +17,7 @@ typedef struct cursor_s {
     sfTexture *basic;
     enum textures_e current;
     enum color_e color;
+    sfColor custom;
     size_t thickness;
     sfVector2f pos;
 }cursor_t;

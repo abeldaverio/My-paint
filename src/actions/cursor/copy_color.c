@@ -22,4 +22,6 @@ void copy_color(cursor_t *cursor, board_t *board, sfVector2i *mouse, sfEvent *)
             return;
         }
     }
+    cursor->color = CUSTOM;
+    cursor->custom = tmp;
 }

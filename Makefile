@@ -49,6 +49,12 @@ SRC	=	src/main_program/main.c	\
 		src/actions/colors/white.c	\
 		src/actions/colors/grey.c	\
 		src/actions/colors/fushia.c	\
+		src/actions/size/litle.c	\
+		src/actions/size/litle_big.c	\
+		src/actions/size/medium.c	\
+		src/actions/size/big_litle.c	\
+		src/actions/size/big.c	\
+		src/actions/size/enormous.c	\
 		src/actions/cursor/do_nothing.c	\
 		src/actions/cursor/copy_color.c	\
 		src/actions/cursor/draw_pencil.c	\

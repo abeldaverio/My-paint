@@ -80,7 +80,7 @@ static bool check_options(wnd_t *wnd_struct, button_t *button,
     return false;
 }
 
-void check_button_click(wnd_t *wnd_struct,
+bool check_button_click(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board)
 {
     for (size_t i = 0; buttons[i] != NULL; i++) {
@@ -95,10 +95,11 @@ void check_button_click(wnd_t *wnd_struct,
     for (size_t i = 0; buttons[i] != NULL; i++) {
         if (buttons[i]->options != NULL &&
             check_options(wnd_struct, buttons[i], cursor, board)) {
-            return;
+            return true;
         }
         if (check_the_button(wnd_struct->wnd, buttons[i], cursor,
             &wnd_struct->Event, board))
             reset_other_buttons(buttons, i, buttons[i]->main.type);
     }
+    return false;
 }

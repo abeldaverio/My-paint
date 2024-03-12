@@ -24,6 +24,7 @@ enum color_e {
     GREY,
     FUSHIA,
     TRANSPARENT,
+    CUSTOM,
 };
 
 #endif

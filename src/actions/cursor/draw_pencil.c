@@ -28,7 +28,7 @@ static void draw_pixel(cursor_t *cursor, board_t *board,
         mouse->x + (coordinates->x - (cursor->thickness / 2)),
         mouse->y - BOARD_ESPACEMENT +
         (coordinates->y - (cursor->thickness / 2)),
-        COLORS[cursor->color]);
+        (cursor->color == CUSTOM) ? cursor->custom : COLORS[cursor->color]);
 }
 
 static void draw_normal(cursor_t *cursor, board_t *board, sfVector2i *mouse)

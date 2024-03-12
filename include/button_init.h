@@ -35,6 +35,18 @@ void clear_board(button_t *, cursor_t *, board_t *);
 void flip_horizontal(button_t *, cursor_t *, board_t *);
 void flip_vertical(button_t *, cursor_t *, board_t *);
 void open_menu(button_t *, cursor_t *, board_t *);
+void save_image(button_t *, cursor_t *, board_t *);
+void pencil_help(button_t *, cursor_t *, board_t *);
+void eraser_help(button_t *, cursor_t *, board_t *);
+void brush_help(button_t *, cursor_t *, board_t *);
+void pipette_help(button_t *, cursor_t *, board_t *);
+void bucket_help(button_t *, cursor_t *, board_t *);
+void clear_help(button_t *, cursor_t *, board_t *);
+void flip_horizontal_help(button_t *, cursor_t *, board_t *);
+void flip_vertical_help(button_t *, cursor_t *, board_t *);
+
+
+//colors
 void set_red(button_t *, cursor_t *, board_t *);
 void set_black(button_t *, cursor_t *, board_t *);
 void set_blue(button_t *, cursor_t *, board_t *);
@@ -49,15 +61,14 @@ void set_beige(button_t *, cursor_t *, board_t *);
 void set_white(button_t *, cursor_t *, board_t *);
 void set_grey(button_t *, cursor_t *, board_t *);
 void set_fushia(button_t *, cursor_t *, board_t *);
-void save_image(button_t *, cursor_t *, board_t *);
-void pencil_help(button_t *, cursor_t *, board_t *);
-void eraser_help(button_t *, cursor_t *, board_t *);
-void brush_help(button_t *, cursor_t *, board_t *);
-void pipette_help(button_t *, cursor_t *, board_t *);
-void bucket_help(button_t *, cursor_t *, board_t *);
-void clear_help(button_t *, cursor_t *, board_t *);
-void flip_horizontal_help(button_t *, cursor_t *, board_t *);
-void flip_vertical_help(button_t *, cursor_t *, board_t *);
+
+//sizes
+void set_litle(button_t *, cursor_t *, board_t *);
+void set_litle_big(button_t *, cursor_t *, board_t *);
+void set_medium(button_t *, cursor_t *, board_t *);
+void set_big_litle(button_t *, cursor_t *, board_t *);
+void set_big(button_t *, cursor_t *, board_t *);
+void set_enormous(button_t *, cursor_t *, board_t *);
 
 static const init_b_t INIT_FILE_MENU[] = {
     {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
@@ -71,9 +82,18 @@ static const init_b_t INIT_HELP_MENU[] = {
     {{60, 40}, {60, 150}, PIPETTE, DROP, pipette_help, NULL, 0},
     {{60, 40}, {60, 190}, BUCKET, DROP, bucket_help, NULL, 0},
     {{60, 40}, {60, 230}, CLEAR, DROP, clear_help, NULL, 0},
-    {{60, 40}, {60, 270}, FLIP_HORIZONTAL, DROP, flip_horizontal_help, NULL,
-        0},
+    {{60, 40}, {60, 270}, FLIP_HORIZONTAL, DROP,
+        flip_horizontal_help, NULL, 0},
     {{60, 40}, {60, 310}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
+};
+
+static const init_b_t INIT_SIZE_MENU[] = {
+    {{40, 20}, {242, 90}, LITLE, DROP, set_litle, NULL, 0},
+    {{40, 20}, {242, 110}, LITLE_BIG, DROP, set_litle_big, NULL, 0},
+    {{40, 20}, {242, 130}, MEDIUM, DROP, set_medium, NULL, 0},
+    {{40, 20}, {242, 150}, BIG_LITLE, DROP, set_big_litle, NULL, 0},
+    {{40, 20}, {242, 170}, BIG, DROP, set_big, NULL, 0},
+    {{40, 20}, {242, 190}, ENORMOUS, DROP, set_enormous, NULL, 0},
 };
 
 static const init_b_t INIT_B_TAB[] = {
@@ -86,6 +106,8 @@ static const init_b_t INIT_B_TAB[] = {
     {{40, 40}, {95, 40}, BRUSH, TOOL, brush_action, NULL, 0},
     {{40, 40}, {140, 40}, PIPETTE, TOOL, pipette_action, NULL, 0},
     {{40, 40}, {185, 40}, BUCKET, TOOL, bucket_action, NULL, 0},
+    {{40, 50}, {242, 40}, SIZE, DROP, open_menu, INIT_SIZE_MENU,
+        sizeof(INIT_SIZE_MENU) / sizeof(init_b_t)},
     {{40, 40}, {300, 40}, CLEAR, ONE_PRESS, clear_board, NULL, 0},
     {{40, 40}, {345, 40}, FLIP_HORIZONTAL, ONE_PRESS,
         flip_horizontal, NULL, 0},
