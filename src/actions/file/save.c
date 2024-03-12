@@ -61,11 +61,14 @@ void save_image(button_t *, cursor_t *, board_t *board)
         HIGHT - BOARD_ESPACEMENT, sfWhite);
     char *new_string = NULL;
 
-    if (input == NULL)
+    if (input == NULL || copy == NULL)
         return;
     if (my_endcmp(input, ".jpg") == false && my_endcmp(input, ".png") == false
-        && my_endcmp(input, ".bmp") == false)
+        && my_endcmp(input, ".bmp") == false) {
         new_string = my_strconcat(input, ".jpg");
+    } else {
+        new_string = my_strdup(input);
+    }
     sfImage_copyImage(copy, board->image, 0, 0, (sfIntRect){}, true);
     sfImage_saveToFile(copy, new_string);
     sfImage_destroy(copy);
