@@ -83,14 +83,15 @@ static const init_b_t INIT_EDIT_MENU[] = {
 
 static const init_b_t INIT_HELP_MENU[] = {
     {{60, 40}, {120, 30}, PENCIL, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {120, 70}, ERASER, DROP, eraser_help, NULL, 0},
-    {{60, 40}, {120, 110}, BRUSH, DROP, brush_help, NULL, 0},
-    {{60, 40}, {120, 150}, PIPETTE, DROP, pipette_help, NULL, 0},
-    {{60, 40}, {120, 190}, BUCKET, DROP, bucket_help, NULL, 0},
-    {{60, 40}, {120, 230}, CLEAR, DROP, clear_help, NULL, 0},
-    {{60, 40}, {120, 270}, FLIP_HORIZONTAL, DROP,
+    {{60, 40}, {120, 70}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {120, 110}, ERASER, DROP, eraser_help, NULL, 0},
+    {{60, 40}, {120, 150}, BRUSH, DROP, brush_help, NULL, 0},
+    {{60, 40}, {120, 190}, PIPETTE, DROP, pipette_help, NULL, 0},
+    {{60, 40}, {120, 230}, BUCKET, DROP, bucket_help, NULL, 0},
+    {{60, 40}, {120, 270}, CLEAR, DROP, clear_help, NULL, 0},
+    {{60, 40}, {120, 310}, FLIP_HORIZONTAL, DROP,
         flip_horizontal_help, NULL, 0},
-    {{60, 40}, {120, 310}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
+    {{60, 40}, {120, 350}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
 };
 
 static const init_b_t INIT_SIZE_MENU[] = {
