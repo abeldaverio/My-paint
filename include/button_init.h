@@ -49,9 +49,10 @@ void set_beige(button_t *, cursor_t *, board_t *);
 void set_white(button_t *, cursor_t *, board_t *);
 void set_grey(button_t *, cursor_t *, board_t *);
 void set_fushia(button_t *, cursor_t *, board_t *);
+void save_image(button_t *, cursor_t *, board_t *);
 
 static const init_b_t INIT_FILE_MENU[] = {
-    {{60, 30}, {0, 30}, SAVE, DROP, pencil_action, NULL, 0},
+    {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
 };
 
 static const init_b_t INIT_B_TAB[] = {

@@ -16,7 +16,7 @@ SRC	=	my_putstr_error.c	\
 		int_to_str.c	\
 		str_to_int.c	\
 		my_arraydup.c	\
-
+		my_strlen.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
