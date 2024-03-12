@@ -19,6 +19,8 @@ static sfImage *create_board(sfImage *board, char *path)
 {
     sfImage *image = sfImage_createFromFile(path);
 
+    if (image == NULL)
+        return NULL;
     sfImage_copyImage(board, image, 0, 0, (sfIntRect){}, true);
     sfImage_destroy(image);
     return (board);
