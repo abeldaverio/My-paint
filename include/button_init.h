@@ -36,6 +36,7 @@ void flip_horizontal(button_t *, cursor_t *, board_t *);
 void flip_vertical(button_t *, cursor_t *, board_t *);
 void open_menu(button_t *, cursor_t *, board_t *);
 void save_image(button_t *, cursor_t *, board_t *);
+void import_image(button_t *, cursor_t *, board_t *);
 void pencil_help(button_t *, cursor_t *, board_t *);
 void eraser_help(button_t *, cursor_t *, board_t *);
 void brush_help(button_t *, cursor_t *, board_t *);
@@ -72,7 +73,7 @@ void set_enormous(button_t *, cursor_t *, board_t *);
 
 static const init_b_t INIT_FILE_MENU[] = {
     {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
-    {{60, 30}, {0, 60}, IMPORT, DROP, save_image, NULL, 0},
+    {{60, 30}, {0, 60}, IMPORT, DROP, import_image, NULL, 0},
     {{60, 30}, {0, 90}, IMPORT, DROP, clear_board, NULL, 0},
 };
 

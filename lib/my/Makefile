@@ -18,6 +18,7 @@ SRC	=	my_putstr_error.c	\
 		my_arraydup.c	\
 		my_strlen.c	\
 		my_putstr.c	\
+		my_strndup.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

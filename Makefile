@@ -25,6 +25,7 @@ SRC	=	src/main_program/main.c	\
 		src/actions/clear.c	\
 		src/actions/open_menu.c	\
 		src/actions/file/save.c	\
+		src/actions/file/import_image.c	\
 		src/actions/flip_horizontal.c	\
 		src/actions/flip_vertical.c	\
 		src/actions/help/pencil.c	\

@@ -21,5 +21,6 @@ int str_to_int(char *);
 char *int_to_str(int);
 char **my_arraydup(char **);
 void my_putstr(char const *);
+char *my_strndup(char *src, int n);
 
 #endif
