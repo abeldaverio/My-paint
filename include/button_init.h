@@ -62,6 +62,10 @@ void set_beige(button_t *, cursor_t *, board_t *);
 void set_white(button_t *, cursor_t *, board_t *);
 void set_grey(button_t *, cursor_t *, board_t *);
 void set_fushia(button_t *, cursor_t *, board_t *);
+void set_dark_green(button_t *, cursor_t *, board_t *);
+void set_dark_cyan(button_t *, cursor_t *, board_t *);
+void set_dark_yellow(button_t *, cursor_t *, board_t *);
+void set_light_beige(button_t *, cursor_t *, board_t *);
 
 //sizes
 void set_litle(button_t *, cursor_t *, board_t *);
@@ -74,25 +78,25 @@ void set_enormous(button_t *, cursor_t *, board_t *);
 static const init_b_t INIT_FILE_MENU[] = {
     {{60, 30}, {0, 30}, SAVE, DROP, save_image, NULL, 0},
     {{60, 30}, {0, 60}, IMPORT, DROP, import_image, NULL, 0},
-    {{60, 30}, {0, 90}, IMPORT, DROP, clear_board, NULL, 0},
+    {{60, 30}, {0, 90}, NEW_FILE, DROP, clear_board, NULL, 0},
 };
 
 static const init_b_t INIT_EDIT_MENU[] = {
-    {{60, 40}, {60, 30}, PENCIL, DROP, pencil_action, NULL, 0},
-    {{60, 40}, {60, 70}, ERASER, DROP, eraser_action, NULL, 0},
+    {{80, 40}, {60, 30}, PENCIL, DROP, pencil_action, NULL, 0},
+    {{80, 40}, {60, 70}, ERASER, DROP, eraser_action, NULL, 0},
 };
 
 static const init_b_t INIT_HELP_MENU[] = {
-    {{60, 40}, {120, 30}, ABOUT, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {120, 70}, PENCIL, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {120, 110}, ERASER, DROP, eraser_help, NULL, 0},
-    {{60, 40}, {120, 150}, BRUSH, DROP, brush_help, NULL, 0},
-    {{60, 40}, {120, 190}, PIPETTE, DROP, pipette_help, NULL, 0},
-    {{60, 40}, {120, 230}, BUCKET, DROP, bucket_help, NULL, 0},
-    {{60, 40}, {120, 270}, CLEAR, DROP, clear_help, NULL, 0},
-    {{60, 40}, {120, 310}, FLIP_HORIZONTAL, DROP,
+    {{60, 40}, {140, 30}, ABOUT, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {140, 70}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {140, 110}, ERASER, DROP, eraser_help, NULL, 0},
+    {{60, 40}, {140, 150}, BRUSH, DROP, brush_help, NULL, 0},
+    {{60, 40}, {140, 190}, PIPETTE, DROP, pipette_help, NULL, 0},
+    {{60, 40}, {140, 230}, BUCKET, DROP, bucket_help, NULL, 0},
+    {{60, 40}, {140, 270}, CLEAR, DROP, clear_help, NULL, 0},
+    {{60, 40}, {140, 310}, FLIP_HORIZONTAL, DROP,
         flip_horizontal_help, NULL, 0},
-    {{60, 40}, {120, 350}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
+    {{60, 40}, {140, 350}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
 };
 
 static const init_b_t INIT_SIZE_MENU[] = {
@@ -107,9 +111,9 @@ static const init_b_t INIT_SIZE_MENU[] = {
 static const init_b_t INIT_B_TAB[] = {
     {{60, 30}, {0, 0}, FILE_I, DROP, open_menu, INIT_FILE_MENU,
         sizeof(INIT_FILE_MENU) / sizeof(init_b_t)},
-    {{60, 30}, {60, 0}, FILE_I, DROP, open_menu, INIT_EDIT_MENU,
+    {{80, 30}, {60, 0}, EDITION, DROP, open_menu, INIT_EDIT_MENU,
         sizeof(INIT_EDIT_MENU) / sizeof(init_b_t)},
-    {{60, 30}, {120, 0}, HELP_I, DROP, open_menu, INIT_HELP_MENU,
+    {{60, 30}, {140, 0}, HELP_I, DROP, open_menu, INIT_HELP_MENU,
         sizeof(INIT_HELP_MENU) / sizeof(init_b_t)},
     {{40, 40}, {5, 40}, PENCIL, TOOL, pencil_action, NULL, 0},
     {{40, 40}, {50, 40}, ERASER, TOOL, eraser_action, NULL, 0},
@@ -137,6 +141,10 @@ static const init_b_t INIT_B_TAB[] = {
     {{18, 18}, {552, 62}, WHITE_I, COLOR, set_white, NULL, 0},
     {{18, 18}, {576, 62}, GREY_I, COLOR, set_grey, NULL, 0},
     {{18, 18}, {600, 62}, FUSHIA_I, COLOR, set_fushia, NULL, 0},
+    {{18, 18}, {624, 62}, DARK_GREEN_I, COLOR, set_dark_green, NULL, 0},
+    {{18, 18}, {648, 62}, DARK_CYAN_I, COLOR, set_dark_cyan, NULL, 0},
+    {{18, 18}, {672, 62}, DARK_YELLOW_I, COLOR, set_dark_yellow, NULL, 0},
+    {{18, 18}, {694, 62}, LIGHT_BEIGE_I, COLOR, set_light_beige, NULL, 0},
 };
 
 static const size_t INIT_B_TAB_SIZE = sizeof(INIT_B_TAB) / sizeof(init_b_t);

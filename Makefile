@@ -50,6 +50,10 @@ SRC	=	src/main_program/main.c	\
 		src/actions/colors/white.c	\
 		src/actions/colors/grey.c	\
 		src/actions/colors/fushia.c	\
+		src/actions/colors/dark_green.c	\
+		src/actions/colors/dark_cyan.c	\
+		src/actions/colors/dark_yellow.c	\
+		src/actions/colors/light_beige.c	\
 		src/actions/size/litle.c	\
 		src/actions/size/litle_big.c	\
 		src/actions/size/medium.c	\

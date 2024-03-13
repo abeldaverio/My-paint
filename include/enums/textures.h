@@ -13,6 +13,8 @@ typedef enum textures_e {
     FILE_I,
     SAVE,
     IMPORT,
+    NEW_FILE,
+    EDITION,
     HELP_I,
     ABOUT,
     PENCIL,
@@ -44,6 +46,10 @@ typedef enum textures_e {
     WHITE_I,
     GREY_I,
     FUSHIA_I,
+    DARK_GREEN_I,
+    DARK_CYAN_I,
+    DARK_YELLOW_I,
+    LIGHT_BEIGE_I,
 }textures_t;
 
 #endif /* !TEXTURE_ENUM_H */

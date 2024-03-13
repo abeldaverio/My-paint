@@ -23,6 +23,10 @@ enum color_e {
     WHITE,
     GREY,
     FUSHIA,
+    DARK_GREEN,
+    DARK_CYAN,
+    DARK_YELLOW,
+    LIGHT_BEIGE,
     TRANSPARENT,
     CUSTOM,
 };
