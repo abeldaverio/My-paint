@@ -83,7 +83,7 @@ static const init_b_t INIT_EDIT_MENU[] = {
 };
 
 static const init_b_t INIT_HELP_MENU[] = {
-    {{60, 40}, {120, 30}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {120, 30}, ABOUT, DROP, pencil_help, NULL, 0},
     {{60, 40}, {120, 70}, PENCIL, DROP, pencil_help, NULL, 0},
     {{60, 40}, {120, 110}, ERASER, DROP, eraser_help, NULL, 0},
     {{60, 40}, {120, 150}, BRUSH, DROP, brush_help, NULL, 0},

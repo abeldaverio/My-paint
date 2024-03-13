@@ -6,6 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
+#include "abs.h"
 #include "colors.h"
 #include "settings.h"
 #include "cursor.h"
@@ -48,17 +49,24 @@ static void draw_normal(cursor_t *cursor, board_t *board, sfVector2i *mouse)
 static void draw_fluid(cursor_t *cursor, board_t *board,
     sfVector2i *mouse, sfVector2i *last_pixel)
 {
-    int i = 0;
-    int j = 0;
+    int delta_x = ABS(mouse->x - last_pixel->x);
+    int delta_y = -1 * ABS(mouse->y - last_pixel->y);
+    int direction_x = last_pixel->x < mouse->x ? 1 : -1;
+    int direction_y = last_pixel->y < mouse->y ? 1 : -1;
+    int difference = delta_x + delta_y;
+    int diff2 = 0;
 
-    while (last_pixel->x + i != mouse->x ||
-        last_pixel->y + j != mouse->y) {
-        draw_normal(cursor, board,
-            &(sfVector2i){last_pixel->x + i, last_pixel->y + j});
-        if (last_pixel->x + i != mouse->x)
-            i += (mouse->x > last_pixel->x) ? 1 : -1;
-        if (last_pixel->y + j != mouse->y)
-            j += (mouse->y > last_pixel->y) ? 1 : -1;
+    while (last_pixel->x != mouse->x || last_pixel->y != mouse->y) {
+        draw_normal(cursor, board, last_pixel);
+        diff2 = 2 * difference;
+        if (diff2 >= delta_y) {
+            difference += delta_y;
+            last_pixel->x += direction_x;
+        }
+        if (diff2 <= delta_x) {
+            difference += delta_x;
+            last_pixel->y += direction_y;
+        }
     }
 }
 
@@ -67,7 +75,8 @@ void draw_pencil(cursor_t *cursor, board_t *board,
 {
     static sfVector2i last_pixel = {0, 0};
 
-    if (event->type == sfEvtMouseButtonPressed) {
+    if (event->type == sfEvtMouseButtonPressed &&
+        !sfKeyboard_isKeyPressed(sfKeyLShift)) {
         draw_normal(cursor, board, mouse);
     } else {
         draw_fluid(cursor, board, mouse, &last_pixel);

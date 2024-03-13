@@ -14,6 +14,7 @@ typedef enum textures_e {
     SAVE,
     IMPORT,
     HELP_I,
+    ABOUT,
     PENCIL,
     ERASER,
     BRUSH,
