@@ -24,12 +24,13 @@ void draw_pencil(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 void erase(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 void copy_color(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 void fill_bucket(cursor_t *, board_t *, sfVector2i *, sfEvent *);
+void draw_brush(cursor_t *, board_t *, sfVector2i *, sfEvent *);
 
 static const cursor_action_t CURSOR_ACT[] = {
     {BASIC, do_nothing},
     {PENCIL, draw_pencil},
     {ERASER, erase},
-    {BRUSH, draw_pencil},
+    {BRUSH, draw_brush},
     {PIPETTE, copy_color},
     {BUCKET, fill_bucket},
 };

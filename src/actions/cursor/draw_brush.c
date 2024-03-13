@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2024
-** erase
+** draw brush
 ** File description:
-** action when eraser is selected
+** action when brush is selected
 */
 
 #include <SFML/Graphics.h>
@@ -26,7 +26,7 @@ static bool is_in_circle(sfVector2i *mouse,
     return false;
 }
 
-static void erase_pixel(cursor_t *cursor, board_t *board,
+static void draw_pixel(cursor_t *cursor, board_t *board,
     sfVector2i *mouse, sfVector2i *coordinates)
 {
     if ((int)(mouse->x +
@@ -43,24 +43,25 @@ static void erase_pixel(cursor_t *cursor, board_t *board,
     sfImage_setPixel(board->image->image,
         mouse->x + (coordinates->x - (cursor->thickness / 2)),
         mouse->y - BOARD_ESPACEMENT +
-        (coordinates->y - (cursor->thickness / 2)), COLORS[TRANSPARENT]);
+        (coordinates->y - (cursor->thickness / 2)),
+        (cursor->color == CUSTOM) ? cursor->custom : COLORS[cursor->color]);
 }
 
-static void erase_normal(cursor_t *cursor, board_t *board, sfVector2i *mouse)
+static void draw_normal(cursor_t *cursor, board_t *board, sfVector2i *mouse)
 {
     sfVector2i coordinates = {0, 0};
 
     while (coordinates.y < (int)cursor->thickness) {
         coordinates.x = 0;
         while (coordinates.x < (int)cursor->thickness) {
-            erase_pixel(cursor, board, mouse, &coordinates);
+            draw_pixel(cursor, board, mouse, &coordinates);
             coordinates.x += 1;
         }
         coordinates.y += 1;
     }
 }
 
-static void erase_fluid(cursor_t *cursor, board_t *board,
+static void draw_fluid(cursor_t *cursor, board_t *board,
     sfVector2i *mouse, sfVector2i *last_pixel)
 {
     int delta_x = ABS(mouse->x - last_pixel->x);
@@ -71,7 +72,7 @@ static void erase_fluid(cursor_t *cursor, board_t *board,
     int diff2 = 0;
 
     while (last_pixel->x != mouse->x || last_pixel->y != mouse->y) {
-        erase_normal(cursor, board, last_pixel);
+        draw_normal(cursor, board, last_pixel);
         diff2 = 2 * difference;
         if (diff2 >= delta_y) {
             difference += delta_y;
@@ -84,16 +85,16 @@ static void erase_fluid(cursor_t *cursor, board_t *board,
     }
 }
 
-void erase(cursor_t *cursor, board_t *board,
+void draw_brush(cursor_t *cursor, board_t *board,
     sfVector2i *mouse, sfEvent *event)
 {
     static sfVector2i last_pixel = {0, 0};
 
     if (event->type == sfEvtMouseButtonPressed &&
         !sfKeyboard_isKeyPressed(sfKeyLShift)) {
-        erase_normal(cursor, board, mouse);
+        draw_normal(cursor, board, mouse);
     } else {
-        erase_fluid(cursor, board, mouse, &last_pixel);
+        draw_fluid(cursor, board, mouse, &last_pixel);
     }
     last_pixel = *mouse;
 }

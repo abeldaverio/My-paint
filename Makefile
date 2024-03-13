@@ -65,6 +65,7 @@ SRC	=	src/main_program/main.c	\
 		src/actions/cursor/draw_pencil.c	\
 		src/actions/cursor/erase.c	\
 		src/actions/cursor/fill_bucket.c	\
+		src/actions/cursor/draw_brush.c	\
 		src/update/update_buttons.c	\
 		src/update/update_board.c	\
 		src/event_handlers/handle_event.c	\

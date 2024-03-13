@@ -8,8 +8,9 @@
 #include "button.h"
 #include "libmy.h"
 
-void brush_help(button_t *, cursor_t *, board_t *)
+void brush_help(button_t *, cursor_t *cursor, board_t *)
 {
+    (void)cursor;
     my_putstr("Brush: Changes the cursor to a brush and draws in a ");
     my_putstr("circular shape right under the pencil.\n");
 }

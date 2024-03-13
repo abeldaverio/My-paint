@@ -8,8 +8,9 @@
 #include "button.h"
 #include "libmy.h"
 
-void pencil_help(button_t *, cursor_t *, board_t *)
+void pencil_help(button_t *, cursor_t *cursor, board_t *)
 {
+    (void)cursor;
     my_putstr("Pencil: Changes the cursor to a pencil and draws in a ");
     my_putstr("cubic form right under the pencil.\n");
 }
