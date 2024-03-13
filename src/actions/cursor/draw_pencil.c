@@ -25,7 +25,7 @@ static void draw_pixel(cursor_t *cursor, board_t *board,
         (coordinates->y - (cursor->thickness / 2)) >= HIGHT) {
         return;
     }
-    sfImage_setPixel(board->image,
+    sfImage_setPixel(board->image->image,
         mouse->x + (coordinates->x - (cursor->thickness / 2)),
         mouse->y - BOARD_ESPACEMENT +
         (coordinates->y - (cursor->thickness / 2)),

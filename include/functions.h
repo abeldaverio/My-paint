@@ -24,6 +24,7 @@ button_t **init_buttons(sfTexture **);
 sfTexture **init_textures(void);
 cursor_t *init_cursor(sfTexture **textures);
 board_t *init_image(char *path);
+void add_node(image_t **image, sfImage *board);
 
 //checkers
 bool check_env(char **env);

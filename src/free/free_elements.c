@@ -49,9 +49,18 @@ static void destroy_cursor(cursor_t *cursor)
     free(cursor);
 }
 
+static void destroy_struct(image_t **image)
+{
+    if (image == NULL || *image == NULL)
+        return;
+    destroy_struct(&((*image)->next));
+    sfImage_destroy((*image)->image);
+    free(*image);
+}
+
 static void destroy_board(board_t *board)
 {
-    sfImage_destroy(board->image);
+    destroy_struct(&(board)->image);
     sfRectangleShape_destroy(board->background);
     sfSprite_destroy(board->sprite);
     sfTexture_destroy(board->texture);

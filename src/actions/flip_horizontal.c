@@ -11,5 +11,5 @@
 
 void flip_horizontal(button_t *, cursor_t *, board_t *board)
 {
-    sfImage_flipHorizontally(board->image);
+    sfImage_flipHorizontally(board->image->image);
 }

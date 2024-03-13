@@ -11,5 +11,5 @@
 
 void flip_vertical(button_t *, cursor_t *, board_t *board)
 {
-    sfImage_flipVertically(board->image);
+    sfImage_flipVertically(board->image->image);
 }

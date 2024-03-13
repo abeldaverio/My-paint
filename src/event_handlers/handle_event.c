@@ -23,5 +23,8 @@ void handle_events(wnd_t *wnd_struct,
             update_board(wnd_struct, cursor, board);
         if (wnd_struct->Event.type == sfEvtResized)
             resize_event(wnd_struct);
+        if (wnd_struct->Event.type == sfEvtMouseButtonReleased &&
+            cursor_on_board(wnd_struct->wnd) == true)
+            add_node(&board->image, board->image->image);
     }
 }

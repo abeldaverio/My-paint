@@ -69,7 +69,7 @@ void save_image(button_t *, cursor_t *, board_t *board)
     } else {
         new_string = my_strdup(input);
     }
-    sfImage_copyImage(copy, board->image, 0, 0, (sfIntRect){}, true);
+    sfImage_copyImage(copy, board->image->image, 0, 0, (sfIntRect){}, true);
     sfImage_saveToFile(copy, new_string);
     sfImage_destroy(copy);
     free(new_string);

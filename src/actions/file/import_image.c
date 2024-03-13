@@ -46,7 +46,7 @@ void import_image(button_t *, cursor_t *, board_t *board)
     if (tmp == NULL) {
         return;
     }
-    sfImage_copyImage(board->image, tmp, 0, 0, (sfIntRect){}, true);
+    sfImage_copyImage(board->image->image, tmp, 0, 0, (sfIntRect){}, true);
     sfImage_destroy(tmp);
     return;
 }
