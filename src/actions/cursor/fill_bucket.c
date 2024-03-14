@@ -46,7 +46,7 @@ void fill_bucket(cursor_t *cursor, board_t *board,
     if (mouse->x < LENGTH - 2 && !is_same_color(colors[0], colors[1]))
         fill_the_board(colors, board->image->image, &(sfVector2i){mouse->x + 2,
             mouse->y - BOARD_ESPACEMENT}, &(sfVector2i){1, 1});
-    if (mouse->y < HIGHT - BOARD_ESPACEMENT - 2 && mouse->x < LENGTH - 1 &&
+    if (mouse->y > BOARD_ESPACEMENT && mouse->x < LENGTH - 1 &&
         !is_same_color(colors[0], colors[1]))
         fill_the_board(colors, board->image->image, &(sfVector2i){mouse->x - 1,
             mouse->y - BOARD_ESPACEMENT - 1}, &(sfVector2i){-1, -1});
