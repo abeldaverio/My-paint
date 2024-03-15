@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Window/Event.h>
+#include "button_init.h"
 #include "button.h"
 #include "functions.h"
 
@@ -26,5 +27,10 @@ void handle_events(wnd_t *wnd_struct,
         if (wnd_struct->Event.type == sfEvtMouseButtonReleased &&
             cursor_on_board(wnd_struct->wnd) == true)
             add_node(&board->image, board->image->image);
+        if (sfKeyboard_isKeyPressed(sfKeyLControl) &&
+            sfKeyboard_isKeyPressed(sfKeyZ) &&
+            wnd_struct->Event.type == sfEvtKeyPressed) {
+                undo(NULL, cursor, board);
+            }
     }
 }
