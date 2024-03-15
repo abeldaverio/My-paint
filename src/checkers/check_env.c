@@ -12,8 +12,9 @@
 bool check_env(char **env)
 {
     for (int i = 0; env[i] != NULL; i++)
-        if (my_strcmp(env[i], "DISPLAY=:0"))
+        if (my_strncmp(env[i], "DISPLAY=", 8) == 1)
             return true;
-    my_putstr_error("my_paint: error with envirement\n");
+    my_putstr_error("my_paint: error with environment, "
+        "check your DISPLAY variable\n");
     return false;
 }

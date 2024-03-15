@@ -17,6 +17,7 @@ void my_strcpy(char *dest, const char *src);
 char *my_strdup(const char *);
 char **str_to_separators(char *str, const char *separators);
 int my_strcmp(const char *, const char *);
+int my_strncmp(const char *, const char *, int);
 int str_to_int(char *);
 char *int_to_str(int);
 char **my_arraydup(char **);
