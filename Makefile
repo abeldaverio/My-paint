@@ -37,6 +37,8 @@ SRC	=	src/main_program/main.c	\
 		src/actions/help/clear.c	\
 		src/actions/help/flip_horizontal.c	\
 		src/actions/help/flip_vertical.c	\
+		src/actions/big_help/big_help.c	\
+		src/actions/big_help/events.c	\
 		src/actions/colors/red.c	\
 		src/actions/colors/black.c	\
 		src/actions/colors/blue.c	\

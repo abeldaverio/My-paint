@@ -42,6 +42,7 @@ void handle_events(wnd_t *wnd_struct, button_t **buttons,
 bool check_button_click(wnd_t *wnd_struct,
     button_t **buttons, cursor_t *cursor, board_t *board);
 void resize_event(wnd_t *wnd_struct);
+void mini_events(wnd_t *wnd_struct);
 
 //update functions
 void update_buttons(button_t **buttons);
