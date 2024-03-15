@@ -32,6 +32,7 @@ typedef enum textures_e {
     CLEAR,
     FLIP_HORIZONTAL,
     FLIP_VERTICAL,
+    UNDO,
     RED_I,
     BLACK_I,
     BLUE_I,

@@ -34,6 +34,7 @@ static const char *INIT_TEXTURE_TAB[] = {
     "assets/icons/clear.png",
     "assets/icons/flip_horizontal.png",
     "assets/icons/flip_vertical.png",
+    "assets/icons/undo.png",
     "assets/colors/red.png",
     "assets/colors/black.png",
     "assets/colors/blue.png",

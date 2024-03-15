@@ -53,7 +53,9 @@ sfVector2f sprite_size(sfTexture *text, sfVector2f size);
 bool cursor_on_board(sfRenderWindow *wnd);
 sfBool is_same_color(sfColor first, sfColor second);
 
-//free functions
+// free functions
+void free_mini(wnd_t *wnd_struct, button_t **buttons,
+    sfTexture **textures);
 void free_elements(wnd_t *wnd_strcut,
     button_t **buttons, sfTexture **textures, cursor_t *cursor);
 void free_more_elements(board_t *board);

@@ -54,6 +54,19 @@ static char *user_input(void)
     return (dest);
 }
 
+static void create_file(sfImage *copy, char *new_string)
+{
+    if (sfImage_saveToFile(copy, new_string)) {
+        my_putstr("File ");
+        my_putstr(new_string);
+        my_putstr(" successfully created.\n");
+    } else {
+        my_putstr("Failed to create file ");
+        my_putstr(new_string);
+        my_putstr(".\nPlease try again.\n");
+    }
+}
+
 void save_image(button_t *, cursor_t *, board_t *board)
 {
     char *input = user_input();
@@ -70,7 +83,7 @@ void save_image(button_t *, cursor_t *, board_t *board)
         new_string = my_strdup(input);
     }
     sfImage_copyImage(copy, board->image->image, 0, 0, (sfIntRect){}, true);
-    sfImage_saveToFile(copy, new_string);
+    create_file(copy, new_string);
     sfImage_destroy(copy);
     free(new_string);
     free(input);
