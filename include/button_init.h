@@ -45,7 +45,7 @@ void bucket_help(button_t *, cursor_t *, board_t *);
 void clear_help(button_t *, cursor_t *, board_t *);
 void flip_horizontal_help(button_t *, cursor_t *, board_t *);
 void flip_vertical_help(button_t *, cursor_t *, board_t *);
-
+void undo(button_t *, cursor_t *, board_t *);
 
 //colors
 void set_red(button_t *, cursor_t *, board_t *);
@@ -127,6 +127,7 @@ static const init_b_t INIT_B_TAB[] = {
         flip_horizontal, NULL, 0},
     {{40, 40}, {390, 40}, FLIP_VERTICAL, ONE_PRESS,
         flip_vertical, NULL, 0},
+    {{40, 40}, {750, 40}, CLEAR, ONE_PRESS, undo, NULL, 0},
     {{18, 18}, {505, 40}, BLACK_I, COLOR, set_black, NULL, 0},
     {{18, 18}, {529, 40}, RED_I, COLOR, set_red, NULL, 0},
     {{18, 18}, {552, 40}, BLUE_I, COLOR, set_blue, NULL, 0},
