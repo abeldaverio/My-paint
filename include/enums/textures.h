@@ -16,6 +16,7 @@ typedef enum textures_e {
     NEW_FILE,
     EDITION,
     HELP_I,
+    TUTORIAL,
     ABOUT,
     PENCIL,
     ERASER,

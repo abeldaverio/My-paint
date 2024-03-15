@@ -17,6 +17,7 @@ SRC	=	src/main_program/main.c	\
 		src/drawers/draw_buttons.c	\
 		src/drawers/draw_cursor.c	\
 		src/drawers/draw_board.c	\
+		src/actions/about.c	\
 		src/actions/pencil.c	\
 		src/actions/eraser.c	\
 		src/actions/brush.c	\

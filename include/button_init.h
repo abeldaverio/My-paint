@@ -47,6 +47,7 @@ void flip_horizontal_help(button_t *, cursor_t *, board_t *);
 void flip_vertical_help(button_t *, cursor_t *, board_t *);
 void undo(button_t *, cursor_t *, board_t *);
 void big_help(button_t *, cursor_t *, board_t *);
+void about(button_t *, cursor_t *, board_t *);
 
 //colors
 void set_red(button_t *, cursor_t *, board_t *);
@@ -88,8 +89,8 @@ static const init_b_t INIT_EDIT_MENU[] = {
 };
 
 static const init_b_t INIT_HELP_MENU[] = {
-    {{60, 40}, {140, 30}, ABOUT, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {140, 70}, ABOUT, DROP, big_help, NULL, 0},
+    {{60, 40}, {140, 30}, ABOUT, DROP, about, NULL, 0},
+    {{60, 40}, {140, 70}, TUTORIAL, DROP, big_help, NULL, 0},
     {{60, 40}, {140, 110}, PENCIL, DROP, pencil_help, NULL, 0},
     {{60, 40}, {140, 150}, ERASER, DROP, eraser_help, NULL, 0},
     {{60, 40}, {140, 190}, BRUSH, DROP, brush_help, NULL, 0},
