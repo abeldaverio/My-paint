@@ -46,7 +46,6 @@ void clear_help(button_t *, cursor_t *, board_t *);
 void flip_horizontal_help(button_t *, cursor_t *, board_t *);
 void flip_vertical_help(button_t *, cursor_t *, board_t *);
 void undo(button_t *, cursor_t *, board_t *);
-void big_help(button_t *, cursor_t *, board_t *);
 void about(button_t *, cursor_t *, board_t *);
 
 //colors
@@ -90,16 +89,15 @@ static const init_b_t INIT_EDIT_MENU[] = {
 
 static const init_b_t INIT_HELP_MENU[] = {
     {{60, 40}, {140, 30}, ABOUT, DROP, about, NULL, 0},
-    {{60, 40}, {140, 70}, TUTORIAL, DROP, big_help, NULL, 0},
-    {{60, 40}, {140, 110}, PENCIL, DROP, pencil_help, NULL, 0},
-    {{60, 40}, {140, 150}, ERASER, DROP, eraser_help, NULL, 0},
-    {{60, 40}, {140, 190}, BRUSH, DROP, brush_help, NULL, 0},
-    {{60, 40}, {140, 230}, PIPETTE, DROP, pipette_help, NULL, 0},
-    {{60, 40}, {140, 270}, BUCKET, DROP, bucket_help, NULL, 0},
-    {{60, 40}, {140, 310}, CLEAR, DROP, clear_help, NULL, 0},
-    {{60, 40}, {140, 350}, FLIP_HORIZONTAL, DROP,
+    {{60, 40}, {140, 70}, PENCIL, DROP, pencil_help, NULL, 0},
+    {{60, 40}, {140, 110}, ERASER, DROP, eraser_help, NULL, 0},
+    {{60, 40}, {140, 150}, BRUSH, DROP, brush_help, NULL, 0},
+    {{60, 40}, {140, 190}, PIPETTE, DROP, pipette_help, NULL, 0},
+    {{60, 40}, {140, 230}, BUCKET, DROP, bucket_help, NULL, 0},
+    {{60, 40}, {140, 270}, CLEAR, DROP, clear_help, NULL, 0},
+    {{60, 40}, {140, 310}, FLIP_HORIZONTAL, DROP,
         flip_horizontal_help, NULL, 0},
-    {{60, 40}, {140, 390}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
+    {{60, 40}, {140, 350}, FLIP_VERTICAL, DROP, flip_vertical_help, NULL, 0},
 };
 
 static const init_b_t INIT_SIZE_MENU[] = {
