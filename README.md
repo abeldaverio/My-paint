@@ -1,17 +1,17 @@
-# 42sh
+# My paint
 [![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](https://forthebadge.com)
 
 ## Description
 
-This is a project made for Epitech in Shell Programming module
+This is a project made for Epitech in Graphical programing in C
 
 How does it work ?
 
-42sh is a famous project in Epitech. The goal is to create a whole Unix SHELL based on TCSH.
+My_paint is a project in Epitech. The goal is to create a painting application.
 
 ## Getting Started
 
-to get started, just ```make && ./42sh```
+to get started, just ```make && ./my_paint```
 
 | Abel Daverio                                       | Remi Nouveau
 |---------------------------------------------------------|--------------------------------------------------------------|
